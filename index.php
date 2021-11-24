@@ -396,7 +396,7 @@ if(!empty($_GET)){
 		        	<i class="fas fa-user-lock icon-design"></i><label for="reg-pswrd">Password</label><br>
 		        	<input class="inpt-frmt" type="password" name="password" id="patient_reg-pswrd" placeholder="Abc@_$234"><br>
 
-		        	<span class="eye2"  onclick="toggle4()">
+		        	<span class="eye2"  onclick="toggle6()">
 						<i id="hide11" class="fas fa-eye"></i>
 						<i id="hide12" class="fas fa-eye-slash"></i>
 					</span>
