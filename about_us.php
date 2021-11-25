@@ -12,6 +12,8 @@
   />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -55,8 +57,6 @@
 
 
     <div class="vision-mission-values">
-
-        <!-- <img src="IMAGES/img1/doctors.jpg" class="doctor-bg"> -->
 
         <div class="mission-vision-value-cards">
 
@@ -108,23 +108,26 @@
 
             <div class="service-card">
                 <img src="IMAGES/img1/medical-counselling.jpg" class="service-image">
-                <p class="service-text"><b>Medical Counselling</b><br>
-                    <span style="font-size: 15px; font-family: cursive;">23% of adults seeking medical help suffer from psychiatric disorders. One-third of the adolescent population has the same problem as do about a quarter of children aged between 7-12 years.</span>
-                </p>
+                <div class="service-txt">
+                    <h3>Medical Counselling</h3>
+                    <p>23% of adults seeking medical help suffer from psychiatric disorders. One-third of the adolescent population has the same problem as do about a quarter of children aged between 7-12 years.</p>
+                </div>
             </div>
 
             <div class="service-card">
                 <img src="IMAGES/img1/qualified-doctors.jpg" class="service-image">
-                <p class="service-text"><b>Qualified Doctors</b><br>
-                    <span style="font-size: 15px; font-family: cursive;">CareVista has a dedicated team of full time and visiting consultants to focus on important healthcare issues and research that affect patients of all ages. Our team of dedicated doctors is highly qualified and committed to excellence in providing an aesthetically pleasing environment to ensure quality in medical care.</span>
-                </p>
+                <div class="service-txt">
+                    <h3>Qualified Doctors</h3>
+                    <p>CareVista has a dedicated team of visiting consultants to focus on important research that affect patients of all ages. Our team of dedicated doctors are committed to provide an aesthetically pleasing environment in medical care.</p>
+                </div>
             </div>
 
             <div class="service-card">
                 <img src="IMAGES/img1/Emergency-Services.jpg" class="service-image">
-                <p class="service-text"><b>Emergency Services</b><br>
-                    <span style="font-size: 15px; font-family: cursive;">CareVista offers 24/7 Emergency facilities. Your health is our primary concern. Our citical care team and other emergency services are fully functional. You will have shorter wait times and remarkable care.</span>
-                </p>
+                <div class="service-txt">
+                    <h3>Emergency Services</h3>
+                    <p>CareVista offers 24/7 Emergency facilities. Your health is our primary concern. Our citical care team and other emergency services are fully functional. You will have shorter wait times and remarkable care.</p>
+                </div>
             </div>
 
         </div>
@@ -136,11 +139,6 @@
         </div>
         
     </div>
-
-    
-
-    
-
 
     <div class="line3"></div>
 
@@ -177,13 +175,6 @@
             </div>
         </div>
     </div>
-
-   <!--  <div>
-        <p class="research-area">RESEARCH AREA</p>
-        
-        
-        
-    </div> -->
 
 
     <div class="line4"></div>
