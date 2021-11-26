@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+
+$name = $_SESSION['doctor_name'];
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,17 +14,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor dashboard | Carevista Hospital</title>
-    <link rel="icon" href="IMAGES/img3/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="IMAGES/img2/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles_doctor.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
     <style></style>
     <nav class="navbar">
-        <img src="IMAGES/img3/login.png" alt="" width="70px" height="70px" style="float:left">
+        <img src="IMAGES/img3/login.png" alt="" width="70px" height="70px" style="float:left;margin-left: 20px;
+        margin-right: 15px;">
         <ul>
            
-          <li style="font-size:250%;letter-spacing: 2px;"><b>Welcome Doctor</b></li> 
-        <button type="button" class="button">Logout</button>
+          <li style="font-size:250%;letter-spacing: 2px;"><b>Welcome <?php echo "$name"; ?></b></li> 
+          <a href="logout.php" class="button">Logout</a>
         </ul>
         
     </nav>
@@ -59,7 +69,7 @@
     <footer class="footer">
         <div class="fcontainer">
             <div class="fitems"><img src="IMAGES/img3/logo_new.PNG" alt="logo image" width="80px" height="70px" style="margin-top: 10px;"></div>
-            <div class="fitems"> <p style="text-align: center; font-size: 30px; font-weight: bold; margin-top: 20px; color: white;margin-left: 20px;">careVista</p></div>
+            <div class="fitems"> <p style="text-align: center; font-size: 30px; font-weight: bold; margin-top: 31px; color: white;margin-left: 20px;">careVista</p></div>
         </div>
       
       

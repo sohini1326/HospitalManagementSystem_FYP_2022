@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+$name = $_SESSION['patient_name'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,17 +13,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient dashboard | Carevista Hospital</title>
-    <link rel="icon" href="IMAGES/img3/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="IMAGES/img2/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="css/styles_patient.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
     <style></style>
     <nav class="navbar">
-        <img src="IMAGES/img3/login.png" alt="" width="70px" height="70px" style="float:left">
+        <img src="IMAGES/img3/login.png" alt="" width="70px" height="70px" style="float:left;margin-left: 15px;
+        margin-right: 10px;">
         <ul>
            
-          <li style="font-size:250%;letter-spacing: 2px;"><b>Welcome Patient</b></li> 
-        <button type="button" class="button">Logout</button>
+          <li style="font-size:250%;letter-spacing: 2px;"><b>Welcome <?php echo "$name"; ?></b></li> 
+          <a href="logout.php" class="button">Logout</a>
         </ul>
         
     </nav>
