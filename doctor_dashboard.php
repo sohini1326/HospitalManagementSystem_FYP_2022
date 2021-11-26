@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor dashboard | Carevista Hospital</title>
+    <link rel="icon" href="IMAGES/img3/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles_doctor.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+    <style></style>
+    <nav class="navbar">
+        <img src="IMAGES/img3/login.png" alt="" width="70px" height="70px" style="float:left">
+        <ul>
+           
+          <li style="font-size:250%;letter-spacing: 2px;"><b>Welcome Doctor</b></li> 
+        <button type="button" class="button">Logout</button>
+        </ul>
+        
+    </nav>
+</head>
+<body >
+    <div style="margin-bottom: 3%;"></div>
+    <h1><span class="" style="font-weight:bold;font-size:60px;margin-top:8%">DASHBOARD</span></h1>
+    <div style="height:80px; width:100%; clear:both;"></div>
+    
+   <div class="fcontainer">
+       <div class="fitems">
+        <p class="rcorners1" ><b>Check schedules<br></b>
+            <!-- HTML !-->
+            <br><br>
+            <button class="button-18" role="button">click here</button>
+            </p>
+       </div>
+       <div class="fitems">
+        <p class="rcorners1"><b>Check and Update <br>patient details</b>
+            <!-- HTML !-->
+            <br><br>
+            <button class="button-18" role="button">click here</button>
+        </p>
+       </div>
+       <div class="fitems">
+        <p class="rcorners1"><b>My profile<br></b>
+            <!-- HTML !-->
+            <br><br>
+            <button class="button-18" role="button">click here</button>
+        </p>
+       </div>
+   </div>
+    
+           
+    </div>
+    <br style="clear: both;">
+
+  
+
+ 
+    <footer class="footer">
+        <div class="fcontainer">
+            <div class="fitems"><img src="IMAGES/img3/logo_new.PNG" alt="logo image" width="80px" height="70px" style="margin-top: 10px;"></div>
+            <div class="fitems"> <p style="text-align: center; font-size: 30px; font-weight: bold; margin-top: 20px; color: white;margin-left: 20px;">careVista</p></div>
+        </div>
+      
+      
+    </footer>
+    
+</body>
+</html>
