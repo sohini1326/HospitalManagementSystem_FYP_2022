@@ -41,7 +41,8 @@ $name = $_SESSION['patient_name'];
                     <p class="rcorners1" style=""><b>Make appointment</b>
                         <!-- HTML !-->
                         <br><br>
-                        <button class="button-18" role="button">click here</button>
+                        <a href="appointment_landing_page.php" class="button-18" role="button" 
+                        style="text-decoration: none;">click here</a>    
                     </p>
                 </div>
 
@@ -49,14 +50,16 @@ $name = $_SESSION['patient_name'];
                     <p class="rcorners1"><b>Pay bill<br></b>
                         <!-- HTML !-->
                         <br><br>
-                        <button class="button-18" role="button">click here</button>
+                        <a href="" class="button-18" role="button" 
+                        style="text-decoration: none;">click here</a> 
                     </p>
                 </div>
                 <div class="fitems1">
                     <p class="rcorners1"><b>My history<br></b>
                         <!-- HTML !-->
                         <br><br>
-                        <button class="button-18" role="button">click here</button>
+                        <a href="" class="button-18" role="button" 
+                        style="text-decoration: none;">click here</a> 
                     </p>
                 </div>
             </div>
@@ -65,21 +68,24 @@ $name = $_SESSION['patient_name'];
                     <p class="rcorners1" style=""><b>My reports<br></b>
                         <!-- HTML !-->
                         <br><br>
-                        <button class="button-18" role="button">click here</button>
+                        <a href="" class="button-18" role="button" 
+                        style="text-decoration: none;">click here</a> 
                     </p>
                 </div>
                 <div class="fitems1">
                     <p class="rcorners1" style=""><b>My profile<br></b>
                         <!-- HTML !-->
                         <br><br>
-                        <button class="button-18" role="button" >click here</button>
+                        <a href="" class="button-18" role="button" 
+                        style="text-decoration: none;">click here</a> 
                     </p>
                 </div>
                 <div class="fitems1">
                     <p class="rcorners1" style="font-size: 120%;"><b>View / Apply <br> health card schemes<br></b>
                         <!-- HTML !-->
                         <br>
-                        <button class="button-18" role="button" style="">click here</button>
+                        <a href="" class="button-18" role="button" 
+                        style="text-decoration: none;">click here</a> 
                     </p>
                 </div>
             </div>           
