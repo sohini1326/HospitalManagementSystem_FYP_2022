@@ -31,7 +31,7 @@ $patient_id = $_SESSION['patient_id'];
 	<?php include 'includes/patient_navbar.php';?>
 
 	<div id="dpt-box">
-		<h2 id="srvc"><i class="fas fa-hand-holding-medical" style="margin-right: 15px;"></i>Our Services</h2>
+		<h2 id="srvc"><i class="fas fa-hand-holding-medical" style="margin-right: 15px;"></i>Our Departments</h2>
 		<div id="dpts">
 
 			<?php

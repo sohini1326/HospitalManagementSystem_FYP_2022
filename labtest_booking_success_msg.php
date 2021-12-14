@@ -39,7 +39,7 @@ $booking_id=$_GET['booking_id'];
 		<h4 id="thank-you">Thank You !!!</h4>
 		<div id="bkng-info">
 			<h5>Booking ID: <?php echo "$booking_id"; ?></h5>
-			<h4>Call <span id="call-no">225-333-337</span> for booking tym</h4>
+			<h4>Call <span id="call-no">225-333-337</span> for booking time</h4>
 		</div>
 		<a href="patient_dashboard.php" class="btn btn-success btn-block" style="margin-top: 15px;">OK</a>
 	</div>

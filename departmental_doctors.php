@@ -64,7 +64,7 @@ $dept_id = $_GET['dept_id'];
 								<h4 class="visit">Visit: '.$row['visit'].'</h4>
 							</div>
 						</div>
-					<h3 class="name">Name: '.$row['doctor_name'].'</h3>
+					<h3 class="name">Name: Dr. '.$row['doctor_name'].'</h3>
 					<a href="checkup_book.php?dept_id='.$dept_id.'&doc_id='.$row['doctor_id'].'" class="btn btn-dark btn-block mt-3">Book Now</a>
 				</div>';
 			}
