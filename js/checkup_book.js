@@ -13,7 +13,7 @@ $(document).ready(function(){
 			url:"add_checkup_booking.php?day="+day+"&p_name="+p_name+"&p_mobile="+p_mobile+"&p_mail="
 				+p_mail+"&doc_id="+doc_id+"&dept_id="+dept_id+"&booking_id="+booking_id,
 			success:function(data){
-				
+			
 			}
 		});
 	});

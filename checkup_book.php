@@ -85,7 +85,7 @@ $doc_id=$_GET['doc_id'];
 		<div id="form-box">			
 				<div style="margin-bottom: 40px;">
 					<label for="days" style="font-family: 'Secular One', sans-serif;font-size: 1.2rem;">Choose a day :</label>
-					<select id="days" name="days" onchange="myFunction(this)">
+					<select id="days" name="days">
 						<option value="none" selected disabled hidden>Select the day</option>
 
 						<?php
