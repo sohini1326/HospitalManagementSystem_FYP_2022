@@ -16,22 +16,3 @@ function toggle3()
 				z.style.display="block";
 			}
 		}
-
-        function toggle4()
-		{
-            var x=document.getElementById("doc_reg-pswrd");   
-			var y=document.getElementById("hide7")
-			var z=document.getElementById("hide8");
-
-			if(x.type === 'password')
-			{
-				x.type="text";
-				y.style.display="block";
-				z.style.display="none";
-			}
-			else{
-				x.type="password";
-				y.style.display="none";
-				z.style.display="block";
-			}
-		}

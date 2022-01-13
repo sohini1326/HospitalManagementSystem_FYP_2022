@@ -36,6 +36,7 @@ if(!empty($_GET)){
 	<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Moon+Dance&display=swap" rel="stylesheet">
 
 	<script src="https://kit.fontawesome.com/12fd2f4021.js" crossorigin="anonymous"></script>
 
@@ -85,6 +86,31 @@ if(!empty($_GET)){
 		</div>
 	</div>
 
+	<div id="extra_module">
+		<h2><i class="fas fa-heartbeat heart" style="margin-right:20px; "></i>At your service<i class="fas fa-heartbeat heart" style="margin-left:20px; "></i></h2>
+		<div id="em_content">
+			<div id="em_left">
+				<img src="IMAGES/img/d1.jpg">
+			</div>
+			<div id="em_right">
+				<div class="ems">
+					<img src="IMAGES/img/Vaccine.jpg">
+					<h3>Vaccination</h3>
+					<a href="vaccination_dashboard.php"><i class="fas fa-hand-point-up click_btn"></i></a>
+				</div>
+				<div class="ems" style="margin-left:30%; ">
+					<img src="IMAGES/img/blood.jpg">
+					<h3>Blood Bank</h3>
+					<a href="blood_bank_dashboard.php"><i class="fas fa-hand-point-up click_btn"></i></a>
+				</div>
+				<div class="ems">
+					<img src="IMAGES/img/organ.jpg">
+					<h3>Organ Donation</h3>
+					<a href="organ_donation_dashboard.php"><i class="fas fa-hand-point-up click_btn"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div id="carousel-box">
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -205,51 +231,6 @@ if(!empty($_GET)){
 		        	<input type="submit" name="" class="btn btn-dark btn-block" value="Login">
 
 		        </form>
-
-		        <p class="mt-5 text-center">
-		        	Not an admin?? 
-		        	<button class="btn btn-primary btn-sm" id="admin_reg_btn">Sign Up</button>
-		        </p>
-		      </div>
-		    </div>
-	  </div>
-	</div>
-
-
-   <!-- Admin Registration -->
-
-	<div class="modal fade" id="adminRegisterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header bgclr">
-		        <h5 class="modal-title text-white" id="exampleModalLabel">Sign Up</h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		      </div>
-		      <div class="modal-body">
-		      	<p id="admin_reg_error" class="text-danger"></p>
-		        <form action="admin_reg_validation.php" method="POST">
-		        	<i class="far fa-user icon-design"></i><label for="admin_reg-name">Username</label><br>
-		        	<input class="inpt-frmt" type="text" name="name" id="admin_reg-name" placeholder="<First_name> <Second_name>"><br>
-
-		        	<i class="fas fa-envelope-open-text icon-design"></i><label for="admin_reg-mail">Email</label><br>
-		        	<input class="inpt-frmt" type="email" name="email" id="admin_reg-mail" placeholder="xyz@gmail.com"><br>
-
-		        	<i class="fas fa-user-lock icon-design"></i><label for="reg-pswrd">Password</label><br>
-		        	<input class="inpt-frmt" type="password" name="password" id="admin_reg-pswrd" placeholder="Abc@_$234"><br>
-					<span class="eye2"  onclick="toggle2()">
-					<i id="hide3" class="fas fa-eye"></i>
-					<i id="hide4" class="fas fa-eye-slash"></i>
-					</span>
-
-		        	<input type="submit" name="reg-btn" class="btn btn-dark btn-block" value="Register">
-		        </form>
-
-		        <p class="mt-5 text-center">
-		        	Already an admin?? 
-		        	<button class="btn btn-warning btn-sm" id="admin_login_btn">Login</button>
-		        </p>
 		      </div>
 		    </div>
 	  </div>
@@ -286,46 +267,7 @@ if(!empty($_GET)){
 
 		        <p class="mt-5 text-center">
 		        	Not a Registered Doctor?? 
-		        	<button class="btn btn-primary btn-sm" id="doctor_reg_btn">Sign Up</button>
-		        </p>
-		      </div>
-		    </div>
-	  </div>
-	</div>
-
-	<!-- Doctor Registration -->
-
-	<div class="modal fade" id="doctorRegisterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-	  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header bgclr">
-		        <h5 class="modal-title text-white" id="exampleModalLabel">Sign Up</h5>
-		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-		          <span aria-hidden="true">&times;</span>
-		        </button>
-		      </div>
-		      <div class="modal-body">
-		      	<p id="doctor_reg_error" class="text-danger"></p>
-		        <form action="doctor_reg_validation.php" method="POST">
-		        	<i class="far fa-user icon-design"></i><label for="doc_reg-name">Username</label><br>
-		        	<input class="inpt-frmt" type="text" name="name" id="doc_reg-name" placeholder="<First_name> <Second_name>"><br>
-
-		        	<i class="fas fa-envelope-open-text icon-design"></i><label for="doc_reg-mail">Email</label><br>
-		        	<input class="inpt-frmt" type="email" name="email" id="doc_reg-mail" placeholder="xyz@gmail.com"><br>
-
-		        	<i class="fas fa-user-lock icon-design"></i><label for="doc_reg-pswrd">Password</label><br>
-		        	<input class="inpt-frmt" type="password" name="password" id="doc_reg-pswrd" placeholder="Abc@_$234"><br>
-					
-                    <span class="eye2"  onclick="toggle4()">
-					<i id="hide7" class="fas fa-eye"></i>
-					<i id="hide8" class="fas fa-eye-slash"></i>
-					</span>
-		        	<input type="submit" name="reg-btn" class="btn btn-dark btn-block" value="Register">
-		        </form>
-
-		        <p class="mt-5 text-center">
-		        	Already a Registered Doctor?? 
-		        	<button class="btn btn-warning btn-sm" id="doctor_login_btn">Login</button>
+		        	<button class="btn btn-primary btn-sm" id="doctor_reg_btn">Please contact the hospital authority</button>
 		        </p>
 		      </div>
 		    </div>
@@ -430,16 +372,10 @@ if(!empty($_GET)){
 			if(err === '1'){
 				$('#admin_login_error').text('Incorrect email/password');
 				$('#adminLoginModal').modal('show');
-			}else if(err === '2'){
-				$('#admin_reg_error').text('Some error occurred');
-				$('#adminRegisterModal').modal('show');
 			}
 			if(err === '3'){
 				$('#doctor_login_error').text('Incorrect email/password');
 				$('#doctorLoginModal').modal('show');
-			}else if(err === '4'){
-				$('#doctor_reg_error').text('Some error occurred');
-				$('#doctorRegisterModal').modal('show');
 			}
 			if(err === '5'){
 				$('#patient_login_error').text('Incorrect email/password');
