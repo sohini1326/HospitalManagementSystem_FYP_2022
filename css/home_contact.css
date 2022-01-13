@@ -246,6 +246,12 @@ a{
   cursor: pointer;
 }
 
+.eye{
+	position:absolute;
+	top:60%;
+	left:90%;
+	cursor:pointer;
+}
 .eye1{
 	position:absolute;
 	top:43%;
@@ -259,7 +265,7 @@ a{
 	cursor:pointer;
 }
 
-#hide1,#hide3,#hide5,#hide7,#hide9,#hide11{
+#hide1,#hide3,#hide5,#hide7{
 	display: none;
 }
 

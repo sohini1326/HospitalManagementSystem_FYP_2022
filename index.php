@@ -223,7 +223,7 @@ if(!empty($_GET)){
 
 		        	<i class="fas fa-user-lock icon-design"></i><label for="admin_pswrd">Password</label><br>
 		        	<input class="inpt-frmt" type="password" name="password" id="admin_pswrd" placeholder="Abc@_$234"><br>
-					<span class="eye1"  onclick="toggle1()">
+					<span class="eye"  onclick="toggle1()">
 					<i id="hide1" class="fas fa-eye"></i>
 					<i id="hide2" class="fas fa-eye-slash"></i>
 					</span>
@@ -256,9 +256,9 @@ if(!empty($_GET)){
 
 		        	<i class="fas fa-user-lock icon-design"></i><label for="doc_pswrd">Password</label><br>
 		        	<input class="inpt-frmt" type="password" name="password" id="doc_pswrd" placeholder="Abc@_$234"><br>
-					<span class="eye1"  onclick="toggle3()">
-					<i id="hide5" class="fas fa-eye"></i>
-					<i id="hide6" class="fas fa-eye-slash"></i>
+					<span class="eye1"  onclick="toggle2()">
+					<i id="hide3" class="fas fa-eye"></i>
+					<i id="hide4" class="fas fa-eye-slash"></i>
 					</span>
 
 		        	<input type="submit" name="" class="btn btn-dark btn-block" value="Login">
@@ -296,9 +296,9 @@ if(!empty($_GET)){
 		        	<i class="fas fa-user-lock icon-design"></i><label for="pswrd">Password</label><br>
 		        	<input class="inpt-frmt" type="password" name="password" id="patient_pswrd" placeholder="Abc@_$234"><br>
 
-		        	<span class="eye1"  onclick="toggle5()">
-						<i id="hide9" class="fas fa-eye"></i>
-						<i id="hide10" class="fas fa-eye-slash"></i>
+		        	<span class="eye1"  onclick="toggle3()">
+						<i id="hide5" class="fas fa-eye"></i>
+						<i id="hide6" class="fas fa-eye-slash"></i>
 					</span>
 
 		        	<input type="submit" name="" class="btn btn-dark btn-block" value="Login">
@@ -338,9 +338,9 @@ if(!empty($_GET)){
 		        	<i class="fas fa-user-lock icon-design"></i><label for="reg-pswrd">Password</label><br>
 		        	<input class="inpt-frmt" type="password" name="password" id="patient_reg-pswrd" placeholder="Abc@_$234"><br>
 
-		        	<span class="eye2"  onclick="toggle6()">
-						<i id="hide11" class="fas fa-eye"></i>
-						<i id="hide12" class="fas fa-eye-slash"></i>
+		        	<span class="eye2"  onclick="toggle4()">
+						<i id="hide7" class="fas fa-eye"></i>
+						<i id="hide8" class="fas fa-eye-slash"></i>
 					</span>
 
 		        	<input type="submit" name="reg-btn" class="btn btn-dark btn-block" value="Register">

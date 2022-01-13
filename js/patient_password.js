@@ -1,8 +1,8 @@
-function toggle5()
+function toggle3()
 		{
             var x=document.getElementById("patient_pswrd");   
-			var y=document.getElementById("hide9")
-			var z=document.getElementById("hide10");
+			var y=document.getElementById("hide5")
+			var z=document.getElementById("hide6");
 
 			if(x.type === 'password')
 			{
@@ -17,11 +17,11 @@ function toggle5()
 			}
 		}
 
-        function toggle6()
+        function toggle4()
 		{
             var x=document.getElementById("patient_reg-pswrd");   
-			var y=document.getElementById("hide11")
-			var z=document.getElementById("hide12");
+			var y=document.getElementById("hide7")
+			var z=document.getElementById("hide8");
 
 			if(x.type === 'password')
 			{
