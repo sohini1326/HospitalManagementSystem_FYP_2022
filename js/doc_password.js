@@ -1,8 +1,8 @@
-function toggle3()
+function toggle2()
 		{
             var x=document.getElementById("doc_pswrd");   
-			var y=document.getElementById("hide5")
-			var z=document.getElementById("hide6");
+			var y=document.getElementById("hide3")
+			var z=document.getElementById("hide4");
 
 			if(x.type === 'password')
 			{
