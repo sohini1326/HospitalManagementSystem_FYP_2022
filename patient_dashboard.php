@@ -76,7 +76,7 @@ $name = $_SESSION['patient_name'];
                     <p class="rcorners1" style=""><b>My profile<br></b>
                         <!-- HTML !-->
                         <br><br>
-                        <a href="" class="button-18" role="button" 
+                        <a href="patient_profile_landing_page.php" class="button-18" role="button" 
                         style="text-decoration: none;">click here</a> 
                     </p>
                 </div>
