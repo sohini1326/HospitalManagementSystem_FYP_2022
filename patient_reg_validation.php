@@ -30,12 +30,24 @@ if(mysqli_query($conn,$query)) {
 	$_SESSION['patient_email'] = $fetched_result['patient_email'];
 	$_SESSION['patient_pswrd'] = $fetched_result['patient_pswrd'];
 
+	$patient_id=$_SESSION['patient_id'] ;
+
+	$query2 = "INSERT INTO patient_personal_info VALUES ('$patient_id','0000-00-00','--SELECT--',0,0,'--SELECT--')";
+	mysqli_query($conn,$query2);
+
+	$query3 = "INSERT INTO patient_contact_info VALUES ('$patient_id',NULL,NULL,NULL,NULL,NULL,NULL)";
+	mysqli_query($conn,$query3);
+
+	$query4 = "INSERT INTO patient_emergency_info VALUES ('$patient_id',NULL,NULL,NULL,NULL,NULL)";
+	mysqli_query($conn,$query4);
+
+	$query5 = "INSERT INTO patient_dp VALUES ('$patient_id','dp.png')";
+	mysqli_query($conn,$query5);
+
 	header('Location:patient_dashboard.php');
 
 }else{
 	header('Location:index.php?err=6');
 }
-
-
 
 ?>
