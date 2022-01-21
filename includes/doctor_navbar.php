@@ -49,7 +49,7 @@
 </style>
 <div id="nav">
 		<div id="left-nav">
-			<img src="image/login.png">
+			<img src="IMAGES/image/login.png">
 			<h2><?php echo "$name"; ?></h2>
 		</div>
 		<div id="right-nav">

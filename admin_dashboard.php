@@ -40,7 +40,7 @@ $name = $_SESSION['admin_name'];
 				<div id="content-bar">
 					<div class="functions" style="background-color: #f0efeb;">
 						<h4>Add/View/Update <br> Doctor Details</h4>
-						<a href="" class="btn btn-dark">Visit</a>
+						<a href="add_view_update_dctr_details.php" class="btn btn-dark">Visit</a>
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
 						<h4>View Patient Details</h4>
@@ -48,7 +48,7 @@ $name = $_SESSION['admin_name'];
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
 						<h4>Admit Patient</h4>
-						<a href="" class="btn btn-dark">Visit</a>
+						<a href="admit_patient.php" class="btn btn-dark">Visit</a>
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
 						<h4>Generate Bills</h4>

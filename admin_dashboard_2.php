@@ -58,7 +58,7 @@ $name = $_SESSION['admin_name'];
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
 						<h4>Add Health Card Schemes</h4>
-						<a href="" class="btn btn-dark">Visit</a>
+						<a href="add_health_card_schemes.php" class="btn btn-dark">Visit</a>
 					</div>
 					<a href="admin_dashboard.php" class="btn btn-dark" style="position: absolute;
     					right: 114px;bottom: 73px;">
