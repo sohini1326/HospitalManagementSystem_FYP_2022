@@ -54,7 +54,8 @@ $name = $_SESSION['doctor_name'];
         <p class="rcorners1"><b>My profile<br></b>
             <!-- HTML !-->
             <br><br>
-            <button class="button-18" role="button">click here</button>
+            <a href="doctor_profile_landing_page.php" class="button-18" role="button" 
+                        style="text-decoration: none;">click here</a>
         </p>
        </div>
    </div>
