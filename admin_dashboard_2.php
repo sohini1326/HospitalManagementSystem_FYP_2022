@@ -13,8 +13,8 @@ $name = $_SESSION['admin_name'];
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Admin Page</title>
-
+	<title>Admin Page | Miscellaneous</title>
+	<link rel="shortcut icon" href="IMAGES/img2/Logo.png" type="image/x-icon">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/admin_dashboard.css">
 
@@ -25,13 +25,15 @@ $name = $_SESSION['admin_name'];
 	<link href="https://fonts.googleapis.com/css2?family=Kings&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital@1&display=swap" rel="stylesheet">
 
+	<script src="https://kit.fontawesome.com/12fd2f4021.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 	<div id="bg-box">
 		<div id="content-box">
 			<div id="top-bar">
 				<h2>Welcome !!! <?php echo "$name"; ?></h2>
-				<a href="logout.php" class="btn btn-light">Logout</a>
+				<a href="logout.php" class="btn btn-light">Logout</a>	
 			</div>
 			<div id="lower-bar">
 				<div id="side-bar">
@@ -39,29 +41,29 @@ $name = $_SESSION['admin_name'];
 				</div>
 				<div id="content-bar">
 					<div class="functions" style="background-color: #f0efeb;">
-						<h4>Add/View/Update <br> Doctor Details</h4>
+						<h4>Blood Bank Management</h4>
+						<a href="bbank_management.php" class="btn btn-dark">Visit</a>
+					</div>
+					<div class="functions" style="background-color: #f0efeb;">
+						<h4>Vaccination Management</h4>
 						<a href="" class="btn btn-dark">Visit</a>
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
-						<h4>View Patient Details</h4>
+						<h4>Organ Donation Management</h4>
 						<a href="" class="btn btn-dark">Visit</a>
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
-						<h4>Admit Patient</h4>
+						<h4>Inventory Management</h4>
 						<a href="" class="btn btn-dark">Visit</a>
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
-						<h4>Generate Bills</h4>
+						<h4>Add Health Card Schemes</h4>
 						<a href="" class="btn btn-dark">Visit</a>
 					</div>
-					<div class="functions" style="background-color: #f0efeb;">
-						<h4>Generate lab test report</h4>
-						<a href="" class="btn btn-dark">Visit</a>
-					</div>
-					<div class="functions" style="background-color: #f0efeb;">
-						<h4>Miscellaneous</h4>
-						<a href="admin_dashboard_2.php" class="btn btn-dark">Visit</a>
-					</div>
+					<a href="admin_dashboard.php" class="btn btn-dark" style="position: absolute;
+    					right: 114px;bottom: 73px;">
+    					<i class="fas fa-chevron-circle-left" style="font-size:27px; "></i>
+    				</a>
 				</div>
 			</div>
 		</div>

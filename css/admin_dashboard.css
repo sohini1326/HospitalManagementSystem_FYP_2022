@@ -38,11 +38,11 @@
 #lower-bar{
 	display: flex;
 	width: 100%;
-	height: 100%;
+	height: 94%;
 }
 #side-bar{
 	width: 7%;
-	height: 87%;
+	height: 93%;
 	background-color: #2d3436;
 	background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%);
 	position: relative;
