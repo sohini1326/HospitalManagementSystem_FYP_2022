@@ -17,10 +17,10 @@
 
     /*Adding gradient*/
 
-    background-color: red;
-	background-image: linear-gradient(to top, #403a3e, #be5869);;
+    /* background-color: red; */
+	background-image: linear-gradient(to top, #403a3e, #be5869);
 	background-size: 100%;
-	background-repeat: repeat;
+	/* background-repeat: repeat; */
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-moz-background-clip: text;

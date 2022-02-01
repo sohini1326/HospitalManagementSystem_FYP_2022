@@ -96,7 +96,7 @@ if(!empty($_GET)){
 				<div class="ems">
 					<img src="IMAGES/img/Vaccine.jpg">
 					<h3>Vaccination</h3>
-					<a href="vaccination_dashboard.php"><i class="fas fa-hand-point-up click_btn"></i></a>
+					<a data-toggle="modal" data-target="#vaccinationLoginModal" style="cursor:pointer;"><i class="fas fa-hand-point-up click_btn"></i></a>
 				</div>
 				<div class="ems" style="margin-left:30%; ">
 					<img src="IMAGES/img/blood.jpg">
@@ -356,9 +356,90 @@ if(!empty($_GET)){
 	</div>
 	
 
+    <!-- Vaccination Login -->
+
+	<div class="modal fade" id="vaccinationLoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header bgclr">
+		        <h5 class="modal-title text-white" id="exampleModalLabel">Login</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	<p id="vaccination_login_error" class="text-danger"></p>
+		        <form action="vaccination_login_validation.php" method="POST">
+
+		        	<i class="fas fa-envelope-open-text icon-design"></i><label for="mail">Email</label><br>
+		        	<input class="inpt-frmt" type="email" name="email" placeholder="xyz@gmail.com"><br>
+
+		        	<i class="fas fa-user-lock icon-design"></i><label for="pswrd">Password</label><br>
+		        	<input class="inpt-frmt" type="password" name="password" placeholder="Abc@_$234"><br>
+
+		        	<span class="eye1"  onclick="toggle3()">
+						<i id="hide5" class="fas fa-eye"></i>
+						<i id="hide6" class="fas fa-eye-slash"></i>
+					</span>
+
+		        	<input type="submit" name="" class="btn btn-dark btn-block" value="Login">
+
+		        </form>
+
+		        <p class="mt-5 text-center">
+		        	Not yet registered?? 
+		        	<button class="btn btn-primary btn-sm" id="vaccination_reg_btn">Sign Up</button>
+		        </p>
+		      </div>
+		    </div>
+	  </div>
+	</div>
+
+
+	<!-- Vaccination Registration -->
+
+	<div class="modal fade" id="vaccinationRegisterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header bgclr">
+		        <h5 class="modal-title text-white" id="exampleModalLabel">Sign Up</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	<p id="vaccination_reg_error" class="text-danger"></p>
+		        <form action="vaccination_reg_validation.php" method="POST">
+		        	<i class="far fa-user icon-design"></i><label for="reg-name">Username</label><br>
+		        	<input class="inpt-frmt" type="text" name="name" id="patient_reg-name" placeholder="<First_name> <Second_name>"><br>
+
+		        	<i class="fas fa-envelope-open-text icon-design"></i><label for="reg-mail">Email</label><br>
+		        	<input class="inpt-frmt" type="email" name="email" id="patient_reg-mail" placeholder="xyz@gmail.com"><br>
+
+		        	<i class="fas fa-user-lock icon-design"></i><label for="reg-pswrd">Password</label><br>
+		        	<input class="inpt-frmt" type="password" name="password" id="patient_reg-pswrd" placeholder="Abc@_$234"><br>
+
+		        	<span class="eye2"  onclick="toggle4()">
+						<i id="hide7" class="fas fa-eye"></i>
+						<i id="hide8" class="fas fa-eye-slash"></i>
+					</span>
+
+		        	<input type="submit" name="reg-btn" class="btn btn-dark btn-block" value="Register">
+		        </form>
+
+		        <p class="mt-5 text-center">
+		        	Registered user?? 
+		        	<button class="btn btn-warning btn-sm" id="vaccination_login_btn">Login</button>
+		        </p>
+		      </div>
+		    </div>
+	  </div>
+	</div>
+
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
 	<script type="text/javascript" src="js/modal_log_reg.js"></script>
+	<script type="text/javascript" src="js/vaccination_log_reg.js"></script>
 	<script type="text/javascript" src="js/scroll_to_top.js"></script>
 	<script type="text/javascript" src="js/admin_password.js"></script>
 	<script type="text/javascript" src="js/doc_password.js"></script>
@@ -383,6 +464,13 @@ if(!empty($_GET)){
 			}else if(err === '6'){
 				$('#patient_reg_error').text('Some error occurred');
 				$('#patientRegisterModal').modal('show');
+			}
+			if(err === '7'){
+				$('#vaccination_login_error').text('Incorrect email/password');
+				$('#vaccinationLoginModal').modal('show');
+			}else if(err === '8'){
+				$('#vaccination_reg_error').text('Some error occurred');
+				$('#vaccinationRegisterModal').modal('show');
 			}
 		});
 	</script>
