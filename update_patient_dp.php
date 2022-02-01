@@ -14,7 +14,7 @@ if(isset($_POST["submit"])){
         $fileName = basename($_FILES["file"]["name"]);
         $targetFilePath = $targetDir . $fileName;
         $fileType = pathinfo($targetFilePath,PATHINFO_EXTENSION);
-        $allowTypes = array('jpg','png','jpeg');
+        $allowTypes = array('jpg','png','jpeg','JPG','JPEG');
         if(in_array($fileType, $allowTypes)){
             // Upload file to server
             if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){

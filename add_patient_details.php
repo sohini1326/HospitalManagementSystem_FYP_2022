@@ -31,30 +31,20 @@ $query1 = "UPDATE patient_personal_info
            SET DOB = '$p_dob', Blood_Group = '$p_bloodgroup', Height = '$p_height', Weight = '$p_weight', Gender = '$p_gender'
            WHERE patient_id = '$patient_id'" ;
 
-if(mysqli_query($conn,$query1)){
-	echo("PROFILE UPDATED SUCCESSFULLY");
-}else{
-	echo("NOT SUCCESS");
-}
-
 $query2 = "UPDATE patient_contact_info
            SET contact_number = '$p_contactnumber', address = '$p_address', state = '$p_state', country = '$p_country', town = '$p_city', pincode = '$p_pincode'
            WHERE patient_id = '$patient_id'" ;
-
-if(mysqli_query($conn,$query2)){
-	echo("PROFILE UPDATED SUCCESSFULLY");
-}else{
-	echo("NOT SUCCESS");
-}
 
 $query3 = "UPDATE patient_emergency_info
            SET name = '$p_emergency_name', relationship = '$p_emergency_relation', mail_id = '$p_emergency_email', contact_number = '$p_emergency_contact', address = '$p_emergency_address'
            WHERE patient_id = '$patient_id'" ;
 
-if(mysqli_query($conn,$query3)){
+if(mysqli_query($conn,$query1) && mysqli_query($conn,$query2) && mysqli_query($conn,$query3)){
 	echo("PROFILE UPDATED SUCCESSFULLY");
+    // header('Location: patient_profile_landing_page.php');
 }else{
 	echo("NOT SUCCESS");
 }
+
 
 ?>

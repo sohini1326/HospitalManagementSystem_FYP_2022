@@ -90,7 +90,7 @@ $mail = $_SESSION['patient_email'];
 
                         <div class="mb-3">
                             <label class="small mb-1" for="patientDOB">Date Of Birth</label>
-                            <input class="form-control" id="patientDOB" type="text" placeholder="YYYY-MM-DD" value="<?php echo $row1['DOB']; ?>">
+                            <input class="form-control" id="patientDOB" type="date" placeholder="YYYY-MM-DD" value="<?php echo $row1['DOB']; ?>">
                         </div>
 
                         <div class="row gx-3 mb-3">                           
@@ -195,7 +195,7 @@ $mail = $_SESSION['patient_email'];
             <div class="card mb-4">
                 <div class="card-header">Emergency Details</div>
                 <div class="card-body">
-                    <form action='patient_profile_landing_page.php'>
+                    <form action='patient_profile_landing_page.php' method="POST">
                         <!-- Form Group (username)-->
                         <div class="mb-3">
                             <label class="small mb-1" for="patientEmergencyName">Name</label>

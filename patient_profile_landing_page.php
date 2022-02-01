@@ -175,12 +175,12 @@ $mail = $_SESSION['patient_email'];
 				<div class="sub-sections">
 					<h2>CONTACT NUMBER: </h2>
 					<div class="line"></div>
-					<p>'.$row3['mail_id'].'</p>
+					<p>'.$row3['contact_number'].'</p>
 				</div>
 				<div class="sub-sections">
 					<h2>E-MAIL ID: </h2>
 					<div class="line"></div>
-					<p>'.$row3['contact_number'].'</p>
+					<p>'.$row3['mail_id'].'</p>
 				</div>
 				<div class="sub-sections">
 					<h2>ADDRESS: </h2>

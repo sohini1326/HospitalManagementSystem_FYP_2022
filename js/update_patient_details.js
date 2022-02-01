@@ -26,7 +26,7 @@ $(document).ready(function(){
 				+height+"&weight="+weight+"&contact_num="+contact_num+"&address="+address+"&state="+state+"&country="
 				+country+"&city="+city+"&pincode="+pincode+"&emer_name="+emer_name+"&emer_relation="+emer_relation+"&emer_contact="+emer_contact+"&emer_email="+emer_email+"&emer_address="+emer_address,
 			success:function(data){
-			
+				alert(data);
 			}
 		});
 	});

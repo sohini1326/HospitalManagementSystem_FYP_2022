@@ -22,7 +22,7 @@ $dept_id = $_GET['dept_id'];
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Outfit:wght@400;500&family=Roboto+Slab:wght@400;500&display=swap" rel="stylesheet">
+	
 	<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Estonia&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
@@ -47,17 +47,19 @@ $dept_id = $_GET['dept_id'];
 			require "db_config.php";
 
 			$query="SELECT l.doctor_id,l.doctor_name,l.doctor_email,d.dept_id,
-					d.visit,s.dept_name,m.qualification FROM doctor_login l 
+					d.visit,s.dept_name,m.qualification, n.pic_file_name FROM doctor_login l 
 					INNER JOIN doc_dep d ON l.doctor_id=d.doc_id
 					INNER JOIN departments s ON d.dept_id=s.dept_id
 					INNER JOIN doctor_details m ON l.doctor_id=m.doc_id
+					INNER JOIN doctor_profile_pic n ON l.doctor_id=n.doctor_id
 					WHERE d.dept_id='$dept_id'";
 
 			$result=mysqli_query($conn,$query);
 			while ($row=mysqli_fetch_assoc($result)) {
+				$imageURL = 'Doctor_dp_uploads/'.$row["pic_file_name"];
 				echo '<div class="wrapper">
 						<div class="dctr">
-							<img src="images/img4/doctor_profile.jpg" class="dctr_profile">
+							<img src="'.$imageURL.'" class="dctr_profile">
 							<div class="content">		
 								<h4 class="consultant">Designation: <br>Consultant - <span class="spclty">'.$row['dept_name'].'</span></h4>
 								<p class="deg">'.$row['qualification'].'</p>
