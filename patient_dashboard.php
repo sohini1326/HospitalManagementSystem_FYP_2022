@@ -84,7 +84,7 @@ $name = $_SESSION['patient_name'];
                     <p class="rcorners1" style="font-size: 120%;"><b>View / Apply <br> health card schemes<br></b>
                         <!-- HTML !-->
                         <br>
-                        <a href="" class="button-18" role="button" 
+                        <a href="health_card_schemes_landing_page.php" class="button-18" role="button" 
                         style="text-decoration: none;">click here</a> 
                     </p>
                 </div>

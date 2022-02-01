@@ -1,7 +1,7 @@
 <style type="text/css">
 #top-bar{
 	width: 100%;
-	height: 13%;
+	height: 12vh;
 	background-color: #2d3436;
 	background-image: linear-gradient(315deg, #2d3436 0%, #d3d3d3 74%);
 	}

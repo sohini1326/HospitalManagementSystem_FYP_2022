@@ -14,7 +14,7 @@ $name = $_SESSION['admin_name'];
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Admin Page</title>
-
+	<link rel="shortcut icon" href="IMAGES/img2/Logo.png" type="image/x-icon">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/admin_dashboard.css">
 
@@ -44,7 +44,7 @@ $name = $_SESSION['admin_name'];
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
 						<h4>View Patient Details</h4>
-						<a href="" class="btn btn-dark">Visit</a>
+						<a href="view_patient_details.php" class="btn btn-dark">Visit</a>
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
 						<h4>Admit Patient</h4>

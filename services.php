@@ -430,7 +430,7 @@
            in knowing about cashless mediclaim. We have tie-ups with various insurance companies
          for easy payments and would be glad to discuss payment options with your insurance provider, 
          in case your policy covers services rendered away from your place of residence.</p>
-    <h4 id="h5"> To avail cashless treatments at The Mission Hospital, please refer to the list of insurance companies offering TPA services mentioned
+    <h4 id="h5"> To avail cashless treatments at CareVista Hospital, please refer to the list of insurance companies offering TPA services mentioned
          on our panel below:-</h4>
       <ul id="h6">
         <li>Star Health and Allied Insurance Co Ltd. </li>
