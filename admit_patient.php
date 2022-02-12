@@ -88,9 +88,7 @@ $name=$_SESSION['admin_name'];
        
       </ul>
     </nav>
-        <div class="bg">
-        <img src="IMAGES/image/admit_patient_bg.jpg">
-      </div>
+       
       
 	  <?php
 	      require "db_config.php"; 

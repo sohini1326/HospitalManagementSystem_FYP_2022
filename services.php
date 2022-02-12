@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="IMAGES/img2/Logo.png" type="image/x-icon">
     
 
+    <script src="https://kit.fontawesome.com/12fd2f4021.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:wght@700&display=swap" rel="stylesheet"> 
@@ -37,7 +38,7 @@
               <li><a href="index.php">Home</a></li>
               <li><a href="about_us.php">About Us</a></li>
               <li><a href="#">Services</a></li>
-              <li><a href="index.php">Contact Us</a></li>
+              <li><a href="#Section6">Contact Us</a></li>
          </ul>
         </nav>
      </div>
@@ -79,8 +80,8 @@
 
 
 
-
-<div class="facilities">
+<div id="Section1">
+<div class="facilities" >
     <div>
         <img id="healthcare1" src="IMAGES/img2/icon1.png" alt="">
 
@@ -92,6 +93,7 @@
         <img id="healthcare2"  src="IMAGES/img2/icon2.png" alt="">
     </div>
 
+</div>
 </div>
 
 
@@ -161,10 +163,21 @@
                 <img src="IMAGES/img2/blood bank.png" alt="">
             </div>
             <div class=content6>
-                  <h2>Blood bank</h2>
+                  <h2>Blood Bank</h2>
                   <p>Blood is both important and critical for life saving and healthcare. The Blood Bank of the hospital is not only the best in 
                     this region but most advanced too. All components Single Donor Platelets, and Cryoprecipitate are available. 
                     Facilities for leucocyte depleted blood are also available for our patient.</p> 
+            </div>
+        </div>
+        <div class="blocks">
+            <div class="icon7">
+                <img src="IMAGES/img2/organs.png" alt="">
+            </div>
+            <div class=content7>
+                  <h2>Organ Donation Bank</h2>
+                  <p>Organ donation and transplantation can be a life-saving procedure for the organ recipient.
+Our Organ Bank is focused on confronting the critical shortage of organs that are available for life-saving transplants such as 
+liver,kidney,heart,lungs etc.We are helping people get transplants in months instead of years, enabling them to enjoy a more active and independent life.</p> 
             </div>
         </div>
   
@@ -177,7 +190,7 @@
 
    
 
-<div class="technology">
+<div class="technology" id="Section2" >
     <h1 id="block-header">Our Key Health Technologies</h1>
   <div class="holdingcontainer1">
     <div class="card1">
@@ -285,7 +298,7 @@
    </div>
 </div>
 
-<div class="outer-box1">
+<div class="outer-box1" id="Section3">
 <h1 id="dept-header"> Our Specialities</h1>
 
 <div class="departments">
@@ -385,7 +398,7 @@
 </div>
 </div>
 
-<div class="outer-box2"> 
+<div class="outer-box2" id="Section4"> 
     <h1 id="vax">Vaccinations</h1>
 <div class="inner-box1">
     <img src="IMAGES/img2/icon6.png" id="v1" alt="">
@@ -393,22 +406,22 @@
     <p id="v2">We believe prevention is always better than cure. Basic immunizations for children
         and adults, and comprehensive vaccinations can be administered by our specialists in our hospital and also in the comfort of your home.
         We Provide Vaccinations for diseases such as:-</p>
-      <ul id="v3">
-             <li>H1N1 </li>
-             <li > Measles</li>
-             <li > Mumps</li>
-             <li > Rubella</li>
-             <li> Tetanus/ Diphteria</li>
-             <li> Typhoid</li>
-             <li> Flu</li>
-             <li> Chicken Pox</li>
-             <li> Hepatitis A and Hepatitis B</li>
-             <li> HPV Vaccine to prevent Cervical Cancer</li>
-             <li>Meningococcus</li>
-             <li> Pneumococcus</li>
-             <li> Herpes Zoster</li>
+      <div id="v3">
+             <i class="fas fa-virus"></i>H1N1 <br> 
+             <i class="fas fa-virus"></i>Measles <br>
+             <i class="fas fa-virus"></i>Mumps <br> 
+             <i class="fas fa-virus"></i>Rubella <br> 
+             <i class="fas fa-virus"></i>Tetanus/ Diphteria<br> 
+             <i class="fas fa-virus"></i>Typhoid <br> 
+             <i class="fas fa-virus"></i>Flu<br> 
+             <i class="fas fa-virus"></i>Chicken Pox<br>
+             <i class="fas fa-virus"></i>Hepatitis A and Hepatitis B<br>
+             <i class="fas fa-virus"></i>Meningococcus <br>
+             <i class="fas fa-virus"></i>Pneumococcus <br>
+             <i class="fas fa-virus"></i>Herpes Zoster <br>
+             
            
-        </ul>
+        </div>
         
         <p id="v4"> Recently,We have also started providing people with covid 19 Vaccine namely Covishield and Covaxin at a cost of Rs.780</p>
          
@@ -419,11 +432,11 @@
 </div>
 </div>
 
-<div class="outer-box3"> 
+<div class="outer-box3" id="Section5"> 
 <h1 id="HI1">Health Insurance</h1>
 <img src="IMAGES/img2/icon8.png" id="h1" width="200px" height="200px" alt="">
 <div class="inner-box2">
-    <img src="IMAGES/img2/bg6.png" width="264px" height="250px" id="h2" alt="">
+    <img src="IMAGES/img2/bg6.png" width="300px" height="250px" id="h2" alt="">
     <div class="insurance">
     <h2 id="h3">TPA Insurance</h2>
     <p id="h4">As a patient seeking medical treatments in a hospital, you might be interested
@@ -432,26 +445,69 @@
          in case your policy covers services rendered away from your place of residence.</p>
     <h4 id="h5"> To avail cashless treatments at CareVista Hospital, please refer to the list of insurance companies offering TPA services mentioned
          on our panel below:-</h4>
-      <ul id="h6">
-        <li>Star Health and Allied Insurance Co Ltd. </li>
-        <li> HDFC Ergo General Insurance Co.Ltd.</li>
-        <li> Aditya Birla Health Insurance Co.Ltd.</li>
-        <li>  Heritage Health TPA Private Limited</li>
-        <li> Bajaj Allianz General Insurance Co.Ltd.</li>
-        <li>  ICICI Lombard General Industries</li>
-        <li> Medsave Healthcare (TPA) Limited.</li>
-        <li> Oriental Insurance Co. Ltd.</li>
-        <li>L&T General Insurance.</li>
-        <li> Anmol Medicare (TPA) Ltd.</li>
+      <div id="h6">
+        <i class="fas fa-file-medical"></i>Star Health and Allied Insurance Co Ltd. <br> <br>
+        <i class="fas fa-file-medical"></i>HDFC Ergo General Insurance Co.Ltd.<br> <br>
+        <i class="fas fa-file-medical"></i>Aditya Birla Health Insurance Co.Ltd.<br> <br>
+        <i class="fas fa-file-medical"></i>Heritage Health TPA Private Limited<br> <br>
+        <i class="fas fa-file-medical"></i>Bajaj Allianz General Insurance Co.Ltd.<br> <br>
+        <i class="fas fa-file-medical"></i>ICICI Lombard General Industries<br> <br>
+        <i class="fas fa-file-medical"></i>Medsave Healthcare (TPA) Limited.<br> <br>
+        <i class="fas fa-file-medical"></i>Oriental Insurance Co. Ltd.<br> <br>
+        <i class="fas fa-file-medical"></i>L&T General Insurance.<br> <br>
+        <i class="fas fa-file-medical"></i>Anmol Medicare (TPA) Ltd.<br> <br>
            
-        </ul>
+        </div>
         <p id="h7"> To apply for Health Card Schemes,please register yourself as a patient in our Hospital.</p>  
        
      </div>
     
-     <img src="IMAGES/img2/icon4.png"  id="h8"  width="200px" height="200px" alt="">
+     <img src="IMAGES/img2/icon4.png"  id="h8"  width="300px" height="200px" alt="">
 </div>
 </div>
+<footer class="footer-box" id="Section6">
+        <div class="footer-content">
+            <div class="logoname">
+                <img src="IMAGES/img2/Logo.png" alt="" width="150px" height="150px" style="margin-top: 20px;margin-left: 40px">
+                <p id="name">careVista</p>
+            </div>
+            <div class="middle">
+             <div class="quick-links">
+                 <h1>Quick Links</h1>
+             </div>
+             <nav id="footbar">
+             <ul>
+              <li><a href="#Section1">Facilities</a></li>
+              <div class="line"></div>
+              <li><a href="#Section2">Health Technologies</a></li>
+              <div class="line"></div>
+              <li><a href="#Section3">Specialities</a></li>
+              <div class="line"></div>
+              <li><a href="#Section4">Vaccination</a></li>
+              <div class="line"></div>
+              <li><a href="#Section5">Health Insurances</a></li>
+         </ul>
+        </nav>
+        </div>
+        <div id="connect-contact">
+                <h4><i class="fas fa-envelope"></i>carevista@gmail.com</h4>
+				<h4><i class="fas fa-phone-alt"></i>225-336-336</h4>
+				<div id="social-media">
+					<i class="fab fa-facebook"></i>
+					<i class="fab fa-whatsapp"></i>
+					<i class="fab fa-twitter"></i>
+				</div>
+                <button>Connect With Us</button>
+			</div>
+
+
+       </div>
+            
+            
+        
+      
+      
+    </footer>
 </body>
 </html>
 
