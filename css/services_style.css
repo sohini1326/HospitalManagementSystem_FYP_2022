@@ -2,6 +2,7 @@
 body{
     margin: 0;
     padding:0;
+    overflow-x: hidden;
     
 }
 #header{
@@ -254,7 +255,7 @@ li.quality:before{
     border-radius:100%;
     margin-left: 400px;
     margin-top: 30px;
-   
+    background-color: bisque;
 }
 .icon3 img{
     width:120px;
@@ -263,6 +264,7 @@ li.quality:before{
     border:2px solid black;
     border-radius:50%;
     margin-top: 30px;
+    background-color: bisque;
 
 }
 .icon4 img{
@@ -272,6 +274,7 @@ li.quality:before{
     border-radius:100%;
     margin-left: 350px;
     margin-top: 50px;
+    background-color: bisque;
     
 }
 .icon5 img{
@@ -281,8 +284,10 @@ li.quality:before{
     border:2px solid black;
     border-radius:50%;
     margin-top: 50px;
+    background-color: bisque;
 
 }
+
 .icon6 img{
     width:120px;
     height:120px;
@@ -290,19 +295,32 @@ li.quality:before{
     border-radius:100%;
     margin-left: 400px;
     margin-top: 100px;
+    background-color: bisque;
     
 }
-.content1,.content2,.content3,.content4,.content5,.content6 {
+.icon7 img{
+    width:170px;
+    height:120px;
+    margin-left:70px;
+    border:2px solid black;
+    border-radius:50px;
+    margin-top: 100px;
+    padding:10px;
+    background-color: bisque;
+
+}
+
+.content1,.content2,.content3,.content4,.content5,.content6,.content7{
    margin-left: 10px;
    margin-top:0;
 }
-.content1 h2,.content2 h2,.content3 h2,.content4 h2,.content5 h2,.content6 h2{
+.content1 h2,.content2 h2,.content3 h2,.content4 h2,.content5 h2,.content6 h2,.content7 h2{
    font-size: 30px;
    font-family: 'Archivo Narrow', sans-serif;
    color: rgb(2, 2, 66);
   
 }
-.content1 p,.content2 p,.content3 p,.content4 p,.content5 p,.content6 p{
+.content1 p,.content2 p,.content3 p,.content4 p,.content5 p,.content6 p,.content7 p{
     font-size: 20px;
     font-family: 'Lobster', cursive;
     font-weight: lighter;
@@ -613,9 +631,12 @@ li.quality:before{
     width:250px;
     height:250px;
     margin-left: 30px;
-    margin-top: 0px;
+   
     border:3px solid rgb(6, 6, 78);
-    border-radius: 100%
+    border-radius: 100%;
+    position:relative;
+    top:200px;
+
    
     
  }
@@ -636,13 +657,17 @@ li.quality:before{
     
  }
  #v3{
-     text-align: center;
-     font-family: 'Ubuntu Mono', monospace;
+    width: 56%;
+    height: 30vh;
+    margin: auto;
+    font-family: 'Ubuntu Mono', monospace;
      font-size:25px;
-    
-     list-style-position: inside;
- }
+     margin-left: 200px;
+}
+ 
  #v4{
+     position:relative;
+     top:150px;
     font-family: 'Righteous', cursive;
     font-size:25px;
     
@@ -655,7 +680,7 @@ li.quality:before{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin-top: 150px;
+    margin-top: 300px;
  }
  .inner-box2{
     display: flex;
@@ -702,29 +727,169 @@ li.quality:before{
 
 }
 #h6{
-    text-align: center;
+    width: 56%;
+    height: 30vh;
+    margin: auto;
     font-family: 'Ubuntu Mono', monospace;
     font-size:25px;
     margin-top:80px;
-    list-style-type: square;
-    list-style-position: inside;
+     margin-left: 200px;
 }
+ 
 
 #h2{
-     margin-top: 300px;
+     margin-top: 500px;
      margin-left:0px;
 }
 #h7{
-   margin-top:10px;
+  
    font-family: 'Ubuntu Mono', monospace;
    font-size:30px;
    font-weight: bold;
+   position:relative;
+   top:350px;
 }
 #h8{
-    margin-top: 300px;
+    margin-top: 500px;
     margin-right: 50px;
 }
 
- 
+.fa-virus
+{
+ margin-right:20px;
+ color:rgb(9, 61, 61);
+}
 
- 
+.fa-file-medical
+{
+    margin-right:20px;
+    color:rgb(9, 61, 61);
+}
+
+.footer-box{
+  
+    background-image: url("../IMAGES/img2/footer.jpg");
+    background-size: cover;
+    position: relative;
+    bottom: 0%;
+    top:400px;
+    width: 100%;
+    height:60vh;
+    margin-bottom: 0%;
+    
+
+  }
+  .footer-content{
+    display: flex;
+   
+  }
+  .logoname
+  {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      top:50px;
+     
+  }
+  #name
+  {
+      position: relative;
+      font-weight:bolder;
+      color: white;
+      font-size: 60px;
+     
+      left:20px;
+  }
+
+  .quick-links
+  {
+      position:relative;
+      top:120px;
+      left:400px;
+      color:rgb(240, 208, 161);
+  }
+  #footbar{
+    flex-basis: 50%;
+    position:relative;
+    top:150px;
+    left:50px;
+   
+}
+#footbar ul{
+	
+	display: flex;
+	
+    
+}
+#footbar li{
+   
+    list-style-type: none;
+}
+#footbar li a{
+     
+    text-decoration: none;
+    list-style-type: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:large;
+    font-weight: bolder;
+    font-size: 25px;
+    color:aliceblue;
+    padding: 10px;
+   
+}
+#footbar a:hover
+{
+    text-decoration:underline;
+    border-radius: 50px;
+    padding:10px;
+}
+.line
+{
+    border:1px solid white;
+    width:0px;
+    height:30px;
+}
+#connect-contact
+{
+    position: relative;
+    top:50px;
+    left:100px;
+    display: flex;
+    flex-direction: column;
+   
+    color: aliceblue;
+   
+    
+}
+#connect-contact i{
+	margin-right: 10px;
+}
+#connect-contact h4{
+    font-size:20px;
+}
+
+#social-media{
+	margin-left: 20px;
+    margin-top:40px;
+  
+}
+#social-media i{
+	font-size: 34px;
+	margin-right: 16px;
+    color:rgb(224, 228, 231);
+}
+
+
+#connect-contact button{
+    margin-top:50px;
+    width:150px;
+    height:40px;
+    margin-left:20px;
+    border-radius: 20px;
+    background-color: rgb(156, 31, 9);
+    font-weight: bolder;
+    font-size: 15px;
+    cursor: pointer;
+    color: antiquewhite;
+    padding:10px;
+}
