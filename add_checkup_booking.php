@@ -35,8 +35,9 @@ if($day==$fetched_result['day1']){
 	$time=$fetched_result['time3'];
 }
 
-$query1="INSERT INTO checkup_bookings VALUES
-		('$booking_id','$booking_done_by',$booker_id,'$p_name','$p_mail',
+$query1="INSERT INTO checkup_bookings(booking_id,booking_done_by,booker_id,booking_done_for,
+		patient_mail,patient_number,dept_id,date,time,doc_id,visit,status) 
+		VALUES ('$booking_id','$booking_done_by',$booker_id,'$p_name','$p_mail',
 		'$p_mobile',$dept_id,'$date','$time',$doc_id,$visit,'Incomplete')";
 
 if(mysqli_query($conn,$query1)){

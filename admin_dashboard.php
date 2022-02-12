@@ -52,7 +52,7 @@ $name = $_SESSION['admin_name'];
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
 						<h4>Generate Bills</h4>
-						<a href="" class="btn btn-dark">Visit</a>
+						<a href="generate_bills.php" class="btn btn-dark">Visit</a>
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
 						<h4>Generate lab test report</h4>

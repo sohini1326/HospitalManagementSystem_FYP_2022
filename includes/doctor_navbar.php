@@ -8,7 +8,7 @@
 
 #nav{
 	width: 100%;
-	height: 12vh;
+	height: 11vh;
 	background-color: rgba(39, 125, 136, 0.5);
 	display: flex;
 	align-items: center;
@@ -27,8 +27,10 @@
    
 }
 #left-nav h2{
-	font-family: 'Roboto Slab', serif;
+	font-family: "Aclonica","Sofia", sans-serif;
 	font-size: 3rem;
+	padding-top: 15px;	
+    letter-spacing: 2px;
 }
 #right-nav{
 	display: flex;
@@ -41,19 +43,20 @@
 #right-nav a{
 	text-decoration: none;
 }
-#btn-txt
+.btn-txt
 {
     font-weight: 900;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-right: 8%;
 }
 </style>
 <div id="nav">
 		<div id="left-nav">
 			<img src="IMAGES/image/login.png">
-			<h2><?php echo "$name"; ?></h2>
+			<h2><b><?php echo "$name"; ?></b></h2>
 		</div>
 		<div id="right-nav">
-			<a href="doctor_dashboard.php" class="btn btn-lg btn-danger" id="btn-txt">Home</a>
-			<a href="logout.php" class="btn btn-lg btn-primary" id="btn-txt">Logout</a>
+			<a href="doctor_dashboard.php" class="btn btn-lg btn-dark btn-txt">Home</a>
+			<a href="logout.php" class="btn btn-lg btn-danger btn-txt">Logout</a>
 		</div>
 </div>

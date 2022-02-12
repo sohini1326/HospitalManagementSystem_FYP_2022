@@ -85,8 +85,8 @@ $doc_id=$_GET['doc_id'];
 		<div id="form-box">			
 				<div style="margin-bottom: 40px;">
 					<label for="days" style="font-family: 'Secular One', sans-serif;font-size: 1.2rem;">Choose a day :</label>
-					<select id="days" name="days">
-						<option value="none" selected disabled hidden>Select the day</option>
+					<select id="days" name="days" required>
+						<option value="" selected disabled hidden>Select the day</option>
 
 						<?php
 
@@ -115,13 +115,28 @@ $doc_id=$_GET['doc_id'];
 				</div>
 
 				<i class="far fa-user icon-design"></i><label for="patient_name">Name</label><br>
-		        <input class="inpt-frmt" type="text" name="name" id="patient_name" placeholder="<First_name> <Second_name>" value="<?php echo "$name"; ?>"><br>
+		        <input class="inpt-frmt" type="text" name="name" id="patient_name" placeholder="<First_name> <Second_name>" value="<?php echo "$name"; ?>" readonly><br>
 
 		        <i class="fas fa-envelope-open-text icon-design"></i><label for="mail">Email</label><br>
 		        <input class="inpt-frmt" type="email" name="email" id="patient_mail" placeholder="xyz@gmail.com" value="<?php echo "$email"; ?>"><br>
 
 		        <i class="fas fa-mobile-alt icon-design"></i><label for="number">Contact Number</label><br>
-		        <input class="inpt-frmt" type="number" name="number" id="number" placeholder="Type in contact number" required maxlength="10"><br>
+
+		        <?php
+
+		        $query1="SELECT * FROM patient_contact_info WHERE patient_id=$patient_id";
+
+				$result1=mysqli_query($conn,$query1);
+				$fetched_result1=mysqli_fetch_assoc($result1);
+
+		        if($fetched_result1['contact_number']!=NULL){
+		        	echo '<input class="inpt-frmt" type="number" name="number" id="number" value="'.$fetched_result1['contact_number'].'" required maxlength="10"><br>';
+		        }else{
+		        	echo '<input class="inpt-frmt" type="number" name="number" id="number" placeholder="Type in contact number" required maxlength="10"><br>';
+		        }
+
+		        ?>
+		        
 
 		        <input type="text" id="doc_id" value="<?php echo "$doc_id"; ?>" hidden>
 		        <input type="text" id="dept_id" value="<?php echo "$dept_id"; ?>" hidden>

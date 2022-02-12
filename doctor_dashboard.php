@@ -40,14 +40,16 @@ $name = $_SESSION['doctor_name'];
         <p class="rcorners1" ><b>Check schedules<br></b>
             <!-- HTML !-->
             <br><br>
-            <button class="button-18" role="button">click here</button>
-            </p>
+            <a href="dctr_check_my_schedule.php" class="button-18" role="button" 
+                        style="text-decoration: none;">click here</a>
+        </p>
        </div>
        <div class="fitems">
         <p class="rcorners1"><b>Check and Update <br>patient details</b>
             <!-- HTML !-->
             <br><br>
-            <button class="button-18" role="button">click here</button>
+            <a href="dctr_check_update_pdetails.php" class="button-18" role="button" 
+                        style="text-decoration: none;">click here</a>
         </p>
        </div>
        <div class="fitems">
