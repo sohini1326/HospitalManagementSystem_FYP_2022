@@ -6,6 +6,7 @@ session_start();
 
 $name = $_SESSION['patient_name'];
 $email=$_SESSION['patient_email'];
+$patient_id = $_SESSION['patient_id'];
 
 ?>
 
@@ -71,23 +72,6 @@ $email=$_SESSION['patient_email'];
 
 		
 	?>
-	<!--
-	<div class="test-category-box">
-		<div class="category">
-			<h3>Blood Tests</h3>
-		</div>
-		<div class="tests">
-			<div class="box">
-				<h4>Sugar Test</h4>
-				<div class="content">
-					<p style="margin-left:20px;">Rs. <b>500</b></p>
-					<p>Room no.: <b>500</b></p>
-					<button class="btn btn-warning">Book now</button>
-				</div>
-			</div>
-		</div>
-	</div>
-	-->
 	<div class="modal fade" id="testConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
@@ -101,13 +85,28 @@ $email=$_SESSION['patient_email'];
 		        <form action="test_confirmation.php" method="POST">
 
 		        	<i class="far fa-user icon-design"></i><label for="patient_name">Name</label><br>
-		        	<input class="inpt-frmt" type="text" name="name" id="patient_name" placeholder="<First_name> <Second_name>" value="<?php echo "$name"; ?>"><br>
+		        	<input class="inpt-frmt" type="text" name="name" id="patient_name" placeholder="<First_name> <Second_name>" value="<?php echo "$name"; ?>" readonly><br>
 
 		        	<i class="fas fa-envelope-open-text icon-design"></i><label for="mail">Email</label><br>
-		        	<input class="inpt-frmt" type="email" name="email" id="patient_mail" placeholder="xyz@gmail.com" value="<?php echo "$email"; ?>"><br>
+		        	<input class="inpt-frmt" type="email" name="email" id="patient_mail" placeholder="xyz@gmail.com" value="<?php echo "$email"; ?>" readonly><br>
 
 		        	<i class="fas fa-mobile-alt icon-design"></i><label for="number">Contact Number</label><br>
-		        	<input class="inpt-frmt" type="number" name="number" id="number" placeholder="Type in contact number" required maxlength="10"><br>
+
+		        	<?php
+
+			        $query1="SELECT * FROM patient_contact_info WHERE patient_id=$patient_id";
+
+					$result1=mysqli_query($conn,$query1);
+					$fetched_result1=mysqli_fetch_assoc($result1);
+
+			        if($fetched_result1['contact_number']!=NULL){
+			        	echo '<input class="inpt-frmt" type="number" name="number" id="number" value="'.$fetched_result1['contact_number'].'" required maxlength="10"><br>';
+			        }else{
+			        	echo '<input class="inpt-frmt" type="number" name="number" id="number" placeholder="Type in contact number" required maxlength="10"><br>';
+			        }
+
+			        ?>
+		        	
 
 		        	<input type="submit" name="" class="btn btn-dark btn-block" value="Continue">
 
