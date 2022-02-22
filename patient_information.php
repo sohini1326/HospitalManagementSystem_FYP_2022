@@ -11,7 +11,7 @@ $patient_id = $_GET['pid'];
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Admin | Patient Details| CareVista</title>
+	<title>Patient Details</title>
 	<link rel="shortcut icon" href="IMAGES/img2/Logo.png" type="image/x-icon">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">

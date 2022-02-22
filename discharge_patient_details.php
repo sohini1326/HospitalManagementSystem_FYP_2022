@@ -28,7 +28,7 @@ session_start();
 
      if($result3)
      {
-        $query4 = "INSERT INTO discharge_bed VALUES (NULL,'$pid', '$bid','$health', '$doc_id', '$admit_date', '$dis_date')";
+        $query4 = "INSERT INTO discharge_bed VALUES (NULL,'$pid', '$bid','$health', '$doc_id', '$admit_date', '$dis_date','Incomplete')";
         $result4= mysqli_query($conn,$query4); 
         $query5 ="UPDATE beds SET bed_assigned_status = 0 WHERE bed_id= '$bid'";
          $result5= mysqli_query($conn,$query5); 
