@@ -18,8 +18,7 @@ $mail = $_SESSION['doctor_email'];
    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
      <!-- Fontawesome icons -->
     <script src="https://kit.fontawesome.com/9df1d0e6a4.js" crossorigin="anonymous"></script>
-     <!-- Fontawesome icons -->
-    <script src="https://kit.fontawesome.com/9df1d0e6a4.js" crossorigin="anonymous"></script>
+    
 
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
