@@ -79,6 +79,7 @@ $delete_doc_id = 0;
     </div>
     <div class="buttons">
         <a href="" class="btn btn-primary" data-toggle="modal" data-target="#doctorRegisterModal"><i class="fa fa-plus" aria-hidden="true"></i>  ADD DOCTOR</a>
+        <a href="add_view_department.php" class="btn btn-warning text-white"><i class="fas fa-eye icon"></i>  ADD/VIEW DEPARTMENT</a>
         <a href="view_deleted_doctor_details.php" class="btn btn-danger"><i class="fas fa-eye icon"></i>  VIEW DELETED DOCTOR DETAILS</a>
     </div>
     <br>
@@ -267,7 +268,6 @@ $delete_doc_id = 0;
 	  </div>
 	</div>
     <!-- ##################################################################################################################################################################### -->
-
 
     <!-- ################################################################# MODAL FOR DELETING DOCTORS ############################################################################# -->
     
