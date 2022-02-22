@@ -50,7 +50,7 @@ $name = $_SESSION['patient_name'];
                     <p class="rcorners1"><b>Pay bill<br></b>
                         <!-- HTML !-->
                         <br><br>
-                        <a href="" class="button-18" role="button" 
+                        <a href="pay_bill_dashboard.php" class="button-18" role="button" 
                         style="text-decoration: none;">click here</a> 
                     </p>
                 </div>
@@ -58,7 +58,7 @@ $name = $_SESSION['patient_name'];
                     <p class="rcorners1"><b>My history<br></b>
                         <!-- HTML !-->
                         <br><br>
-                        <a href="" class="button-18" role="button" 
+                        <a href="my_history_dashboard.php" class="button-18" role="button" 
                         style="text-decoration: none;">click here</a> 
                     </p>
                 </div>
@@ -68,7 +68,7 @@ $name = $_SESSION['patient_name'];
                     <p class="rcorners1" style=""><b>My reports<br></b>
                         <!-- HTML !-->
                         <br><br>
-                        <a href="" class="button-18" role="button" 
+                        <a href="my_reports_dashboard.php" class="button-18" role="button" 
                         style="text-decoration: none;">click here</a> 
                     </p>
                 </div>
