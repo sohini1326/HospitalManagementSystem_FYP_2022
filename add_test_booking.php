@@ -14,10 +14,11 @@ $result = mysqli_query($conn,$query);
 $fetched_result = mysqli_fetch_assoc($result);
 
 $amt = $fetched_result['rate'];
-$date = $fetched_result['date'];
+$date = $fetched_result['test_date'];
 
 $query1 = "INSERT INTO test_bookings VALUES('$booking_id','$booking_done_by',$booker_id,NULL,NULL,
-			NULL,$test_id,$amt,'$date','Incomplete','Incomplete')";
+		NULL,NULL,$test_id,$amt,'$date','Incomplete','Incomplete')";
+
 if(mysqli_query($conn,$query1)){
 	echo("SUCCESS");
 }else{

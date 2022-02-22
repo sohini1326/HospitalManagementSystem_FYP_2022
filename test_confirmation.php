@@ -10,6 +10,7 @@ $patient_id = $_SESSION['patient_id'];
 $rcvd_name = $_POST['name'];
 $rcvd_email = $_POST['email'];
 $rcvd_nmbr = $_POST['number'];
+$gender=$_POST['gender'];
 
 ?>
 
@@ -72,6 +73,7 @@ $rcvd_nmbr = $_POST['number'];
 			
 			<a href="labtest_booking_success_msg.php?booking_id=<?php echo "$booking_id"; ?>" id="test-confirmation-btn" class="btn btn-warning btn-block">Confirm</a>
 		</div>
+		<input type="hidden" name="" id="gender" value="<?php echo "$gender"; ?>">
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

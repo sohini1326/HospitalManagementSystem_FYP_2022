@@ -51,7 +51,7 @@ $patient_id = $_SESSION['patient_id'];
 			$result1 = mysqli_query($conn,$query1);
 			while($row1=mysqli_fetch_assoc($result1)){
 
-				$originalDate = $row1['date'];
+				$originalDate = $row1['test_date'];
 				$newDate = date("d-m-Y", strtotime($originalDate));
 
 				echo'<div class="box">
@@ -107,8 +107,12 @@ $patient_id = $_SESSION['patient_id'];
 
 			        ?>
 		        	
+			        <i class="fas fa-venus-mars icon-design"></i><label for="Gender">Gender</label>
+			        <br>
+			        <input type="radio" name="gender" value="Male" id="male"><label for="male" style="margin-right: 4%;">Male</label>
+			        <input type="radio" name="gender" value="Female" id="female"><label for="female">Female</label>
 
-		        	<input type="submit" name="" class="btn btn-dark btn-block" value="Continue">
+		        	<input type="submit" name="" class="btn btn-dark btn-block" value="Continue" style="margin-top:4%">
 
 		        </form>
 		      </div>

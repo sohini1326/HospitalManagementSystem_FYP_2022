@@ -111,10 +111,10 @@ a{
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-    align-items: center;
-    padding: 10px;
-    box-shadow: 3px 3px 8px 7px #a3c1ad;
-    cursor: pointer;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 3px 3px 8px 7px #a3c1ad;
+  cursor: pointer;
 }
 .module img{
 	width: 80%;

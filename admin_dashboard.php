@@ -56,7 +56,7 @@ $name = $_SESSION['admin_name'];
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
 						<h4>Generate lab test report</h4>
-						<a href="" class="btn btn-dark">Visit</a>
+						<a href="generate_lab_report.php" class="btn btn-dark">Visit</a>
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
 						<h4>Miscellaneous</h4>
