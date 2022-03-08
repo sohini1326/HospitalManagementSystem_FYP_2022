@@ -376,7 +376,7 @@ li.active a::after {
    top:30%;
    left:35%;
    width:60%;
-   height:100%;
+   height:auto;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-evenly;
@@ -495,7 +495,7 @@ li.active a::after {
    top:33%;
    left:35%;
    width:60%;
-   height:100vh;
+   height:auto;
    display: flex;
    flex-wrap: wrap;
    justify-content: space-evenly;
