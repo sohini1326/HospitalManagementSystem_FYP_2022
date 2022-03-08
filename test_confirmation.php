@@ -11,7 +11,7 @@ $rcvd_name = $_POST['name'];
 $rcvd_email = $_POST['email'];
 $rcvd_nmbr = $_POST['number'];
 $gender=$_POST['gender'];
-
+$payment_mode = $_POST['payment_mode'];
 ?>
 
 <!DOCTYPE html>
@@ -70,14 +70,18 @@ $gender=$_POST['gender'];
 			<h4 class="date-room">Date : <?php echo "$newDate"; ?></h4>
 			<h5 class="date-room">Room No. : <?php echo "$room_no"; ?></h5>
 			<h4 id="amount">Amount to be paid: <span id="money">Rs. <?php echo "$amt"; ?></span></h4>
+			<h4 id="mode">Mode of Payment: <span id="p_mode"><?php echo "$payment_mode"; ?></span></h4>
 			
 			<a href="labtest_booking_success_msg.php?booking_id=<?php echo "$booking_id"; ?>" id="test-confirmation-btn" class="btn btn-warning btn-block">Confirm</a>
 		</div>
-		<input type="hidden" name="" id="gender" value="<?php echo "$gender"; ?>">
+		<input type="hidden" name="gender" id="gender" value="<?php echo "$gender"; ?>">
+		<input type="hidden" name="payment_mode" id="payment_mode" value="<?php echo "$payment_mode"; ?>">
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+	<script>
+		console.log($('#payment_mode').val());
+	</script>
 	<script type="text/javascript" src="js/lab_test_confirmation.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

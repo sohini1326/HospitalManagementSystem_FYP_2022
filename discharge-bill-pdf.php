@@ -6,7 +6,7 @@ $name=$_SESSION['admin_name'];
 require "vendor/autoload.php";
 
 
-
+$payment_mode = $_POST['mode_of_payment'];
 $bed_charge=$_POST['bed_charge'];
 $doc_charge=$_POST['doc_charge'];
 $nurse_charge=$_POST['nurse_charge'];
@@ -57,6 +57,7 @@ $price5=$consumables*$Qty;
 $code=rand(1,9999);
 $bill_no="DB".$code;
 $total=$price1+$price2+$price3+$price4+$price5+$surgery+$anst_charge+$OT_charge;
+
 
 date_default_timezone_set('Asia/Kolkata');
 $currentdate = date('d/m/Y H:i:s');
@@ -215,11 +216,21 @@ $html='<div class="upper">
         $mpdf->output($file,'I');
         $mpdf->Output($location.$file, \Mpdf\Output\Destination::FILE);
 
-        $query3 = "INSERT INTO discharge_bill VALUES ('$pid','$bid','$file')";
+        $query3 = "INSERT INTO discharge_bill VALUES ('$pid','$bid','$total','$file')";
         mysqli_query($conn,$query3);
+
+        if($payment_mode=='Cash'){
+            $query4 = "UPDATE discharge_bed SET billing_status= 'Complete',payment_mode='Cash'
+                       WHERE patient_id='$pid' and bed_id='$bid'";
+            mysqli_query($conn,$query4);
+        }
+        else{
+            $query4 = "UPDATE discharge_bed SET billing_status= 'Complete',payment_mode='Online'
+                       WHERE patient_id='$pid' and bed_id='$bid'";
+            mysqli_query($conn,$query4);
+        }
         
-        $query4 = "UPDATE discharge_bed SET billing_status= 'Complete' WHERE patient_id='$pid' and bed_id='$bid'";
-        mysqli_query($conn,$query4);
+        
         
         
 ?>

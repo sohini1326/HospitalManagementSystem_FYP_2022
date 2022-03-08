@@ -11,7 +11,7 @@ $test=$_GET['test'];
 $date=$_GET['date'];
 $newDate = date("d-m-Y", strtotime($date));
 
-$query="SELECT b.rate from test_bookings a inner join labtest b on a.test_id=b.id where a.booker_id='$pid'";
+$query="SELECT * from test_bookings where booking_id='$bid'";
 $result=mysqli_query($conn,$query);
 $row = mysqli_fetch_assoc($result);
 $query1="SELECT DOB,Gender from patient_personal_info where patient_id='$pid'";
@@ -87,11 +87,11 @@ $html='<div class="upper">
             </tr>
             <tr>
                 <td>'.$test.'</td>
-                <td>'.$row['rate'].'</td>
+                <td>'.$row['amount'].'</td>
             </tr>
         </table>
         <div class="amount">
-        <p>Total Amount:Rs. '.$row['rate'].' </p>
+        <p>Total Amount:Rs. '.$row['amount'].' </p>
         </div>
         <div class="statement">
         <p> All Patient records are confidential and are revealed to the patient or his/her authorized representative only.</p>

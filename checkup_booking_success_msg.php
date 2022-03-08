@@ -88,7 +88,7 @@ $booking_id=$_GET['bkng_id'];
 					<h5>Time: <?php echo "$time"; ?></h5>
 					<h5>Visit: <?php echo "$visit"; ?></h5>
 				</div>
-				<a href="checkup_booking_payment_options.php?b_id=<?php echo "$booking_id"; ?>" 
+				<a href="pay_bill_dashboard.php" 
 					class="btn btn-primary" id="pay-btn">Pay Now</a>
 			</div>
 		</div>
