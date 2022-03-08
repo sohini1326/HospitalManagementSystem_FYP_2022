@@ -38,7 +38,12 @@ $mpdf = new \Mpdf\Mpdf();
 $stylesheet = file_get_contents('css/checkup_booking_receipt_pdf.css'); // external css
 $mpdf->WriteHTML($stylesheet,1);
 $mpdf->WriteHTML($html,2);
-$file=time().'.pdf';
-$mpdf->output($file,'I');
+$file=$b_id.'.pdf';
+$query = "UPDATE checkup_bookings
+          SET bill_doc='$file'
+          WHERE booking_id ='$b_id'";
+    mysqli_query($conn,$query);
+    $checkup_bill = "regular_checkup_bill/".$file;
+    $mpdf->Output($checkup_bill,'F');
 
 ?>

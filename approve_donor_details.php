@@ -193,7 +193,7 @@ if(mysqli_query($conn,$query)){
     $mail->Host       = 'smtp.gmail.com';                     
     $mail->SMTPAuth   = true;                                   
     $mail->Username   = 'carevista7@gmail.com';                    
-    $mail->Password   = 'carevista@123';                             
+    $mail->Password   = 'CareVista@2022';                             
     $mail->SMTPSecure = 'tls';   
     $mail->Port       = 587;    
 
@@ -217,7 +217,14 @@ if(mysqli_query($conn,$query)){
                         <b>NOTE:</b> If you do not want to become an organ donor then you can unpledge yourself as a donor from our website.<br><br>
                         <b><i>Thank You</i></b><br>
                         <b><i>CareVista Superspeciality Hospital</i></b><br>';
-                        $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    $mail->SMTPOptions = array(
+                            'ssl' => array(
+                                'verify_peer' => false,
+                                'verify_peer_name' => false,
+                                'allow_self_signed' => true
+                            )
+                       );
+    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
                         if($mail->send()){
                             $_SESSION['status'] = "SUCCESSFUL";

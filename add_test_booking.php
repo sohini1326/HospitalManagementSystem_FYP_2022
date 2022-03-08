@@ -17,7 +17,7 @@ $amt = $fetched_result['rate'];
 $date = $fetched_result['test_date'];
 
 $query1 = "INSERT INTO test_bookings VALUES('$booking_id','$booking_done_by',$booker_id,NULL,NULL,
-		NULL,NULL,$test_id,$amt,'$date','Incomplete','Incomplete')";
+		NULL,NULL,$test_id,$amt,'$date','Incomplete','Incomplete',NULL,NULL)";
 
 if(mysqli_query($conn,$query1)){
 	echo("SUCCESS");

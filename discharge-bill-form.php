@@ -91,6 +91,14 @@ $days = $diff->format('%d days');
     ?>
     <div class="myform">
     <form method="POST" action="discharge-bill-pdf.php">
+            <div class="form-group">
+                 <label class="form-heading" for="mode_of_payment">Mode of Payment :</label>
+                 <select class="custom-select form-control inpt-box" id="mode_of_payment" name="mode_of_payment" required>
+                    <option value="none" selected disabled hidden>--SELECT--</option>
+                    <option value="Cash">Cash</option>
+                    <option value="Online">Online</option>
+                 </select>
+            </div>
            <div class="form-group">
                  <label class="form-heading" for="bed_charge">Bed Charge Per Day :</label>
                  <input type="number" class="form-control inpt-box" id="bed_charge" name="bed_charge" value="<?php echo $row1['charges per day']; ?>" readonly>
@@ -139,7 +147,7 @@ $days = $diff->format('%d days');
             <input type="text" name="health" value="<?php echo "$health_issue"; ?>" hidden>
             
 
-             <button type="submit" class="btn btn-primary mybtn"><i class="fas fa-file-invoice"></i>Generate Bill</button>
+             <button type="submit" class="btn btn-primary mybtn mb-4"><i class="fas fa-file-invoice"></i>Generate Bill</button>
 
     </form>
     

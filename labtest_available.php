@@ -110,7 +110,15 @@ $patient_id = $_SESSION['patient_id'];
 			        <i class="fas fa-venus-mars icon-design"></i><label for="Gender">Gender</label>
 			        <br>
 			        <input type="radio" name="gender" value="Male" id="male"><label for="male" style="margin-right: 4%;">Male</label>
-			        <input type="radio" name="gender" value="Female" id="female"><label for="female">Female</label>
+			        <input type="radio" name="gender" value="Female" id="female"><label for="female">Female</label><br>
+
+					<i class="fa fa-credit-card icon-design" aria-hidden="true"></i><label for="payment_mode">Mode of Payment</label>
+			        <br>
+			        <select class="custom-select form-control" id="payment_mode" name="payment_mode" required>
+						<option value="none" selected disabled hidden>--SELECT--</option>
+						<option value="Cash">Cash</option>
+						<option value="Online">Online</option>
+					</select>
 
 		        	<input type="submit" name="" class="btn btn-dark btn-block" value="Continue" style="margin-top:4%">
 

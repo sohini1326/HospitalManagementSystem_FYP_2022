@@ -67,7 +67,7 @@ $doc_id=$_SESSION['doctor_id'];
 
 						$query="SELECT * FROM checkup_bookings c INNER JOIN 
 								patient_personal_info p ON c.booker_id=p.patient_id 
-								WHERE date < '$today_date' AND doc_id='$doc_id' 
+								WHERE doc_id='$doc_id' 
 								AND c.status='Complete'";
 						$result=mysqli_query($conn,$query);
 

@@ -17,6 +17,7 @@ if($event == 1){
 		$query2="UPDATE checkup_bookings SET payment_mode = 'Cash', payment_status = 'Complete', 
 				status = 'Complete' WHERE booking_id LIKE '$b_id'";
 		mysqli_query($conn,$query2);
+		header('Location:download_checkup_booking_receipt.php?b_id='.$b_id.'');
 	}
 }else if($event == 2){
 	$query3="UPDATE checkup_bookings SET status = 'Cancelled' WHERE booking_id LIKE '$b_id'";
