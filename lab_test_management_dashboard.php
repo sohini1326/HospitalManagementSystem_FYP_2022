@@ -265,7 +265,10 @@ $name=$_SESSION['admin_name'];
 				      		<input type="number" class="form-control" name="female_max" id="female_max" step="any" placeholder="accepted range">
 				    	</div>
 				  	</div>
-
+				  	<div class="form-group">
+				    	<label for="test_unit">Test Unit</label>
+				    	<input type="text" class="form-control" name="test_unit" id="test_unit" placeholder="<Test Unit (mg/dl, mIU/mL,...)>">
+				  	</div>
 				  <input type="submit" name="" class="btn btn-block btn-dark" value="Save Changes" style="margin-top:4%;">
 				</form>
 		      </div>

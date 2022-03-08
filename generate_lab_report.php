@@ -35,6 +35,9 @@ $name=$_SESSION['admin_name'];
 
 	<?php include 'includes/admin_navbar.php'?>
 
+	<a href="view_prev_test_report_admin.php" class="btn btn-info" style="float: right;margin-top: 2%;margin-right: -5%;
+    margin-bottom: 3%;">View previous labtest reports</a>
+
 	<table style="width:85%; margin: auto;margin-top: 3%;margin-bottom: 1%;">
 		<thead>
 			<tr>
@@ -130,7 +133,13 @@ $name=$_SESSION['admin_name'];
 				      	<label for="remarks">Any remarks to add:</label>
 				      	<input type="text" class="form-control" name="remarks" id="remarks"> 	
 				  	</div>
-			
+					
+					<?php
+						date_default_timezone_set('Asia/Kolkata');
+						$g_date = date('Y-m-d H:i:s');
+					?>
+					
+					<input type="hidden" name="g_date" value="<?php echo $g_date ; ?>">
 
 				  <input type="submit" name="" class="btn btn-block btn-dark" value="Save Changes" style="margin-top:4%;" id="save_ba_report">
 
@@ -204,7 +213,13 @@ $name=$_SESSION['admin_name'];
 				      	<label for="di_test_docs">Attach the pdf of the documents [pdf version]</label>
 				      	<input type="file" accept=".pdf" class="form-control" name="di_test_docs" id="di_test_docs" required=""> 	
 				  	</div>
-			
+
+					<?php
+						date_default_timezone_set('Asia/Kolkata');
+						$g_date = date('Y-m-d H:i:s');
+					?>
+					
+					<input type="hidden" name="g_date" value="<?php echo $g_date ; ?>">
 
 				  <input type="submit" name="" class="btn btn-block btn-dark" value="Save Changes" style="margin-top:4%;">
 
@@ -215,11 +230,29 @@ $name=$_SESSION['admin_name'];
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 	<script type="text/javascript" src="js/generate_lab_report.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+	<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+
+	<?php
+        if(isset($_SESSION['status']) && $_SESSION['status']!='')
+        {
+    ?>
+            <script type="text/javascript">
+                swal({
+                    title: "<?php echo $_SESSION['status'];?>",
+                    icon: "<?php echo $_SESSION['status_code'];?>",
+                    text: "<?php echo $_SESSION['status_text'];?>",
+                    button: "OK",
+                });
+            </script>
+    <?php
+        unset($_SESSION['status']);
+        }
+    ?> 
 </body>
 </html>

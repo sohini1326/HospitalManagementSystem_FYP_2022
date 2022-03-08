@@ -45,6 +45,7 @@ $test_id=$_GET['test_id'];
 	$male_max=$fetched_result['male_max'];
 	$female_min=$fetched_result['female_min'];
 	$female_max=$fetched_result['female_max'];
+	$test_unit=$fetched_result['unit'];
 
 	?>
 
@@ -54,6 +55,7 @@ $test_id=$_GET['test_id'];
 		<tr>
 			<th colspan="2">MALE</th>
 			<th colspan="2">FEMALE</th>
+			<th rowspan="2">Unit</th>
 		</tr>
 		<tr>
 			<th>Minimum</th>
@@ -66,6 +68,7 @@ $test_id=$_GET['test_id'];
 			<td><?php echo $male_max; ?></td>
 			<td><?php echo $female_min; ?></td>
 			<td><?php echo $female_max; ?></td>
+			<td><?php echo $test_unit; ?></td>
 		</tr>
 	</table>
 

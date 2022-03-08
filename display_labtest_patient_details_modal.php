@@ -12,8 +12,10 @@ if($result=mysqli_query($conn,$query)){
 	echo '<div>
 		      		<h3>Mail: '.$fetched_result['patient_mail_id'].'</h3>
 		      		<hr>
-		      		<h5>Amount: '.$fetched_result['amount'].'</h5>
-		      		<h5 id="date">Date: '.$fetched_result['date'].'</h5>';
+		      		<h5>Amount: '.$fetched_result['amount'].'</h5>';
+
+		      		$newDate = date("d-m-Y", strtotime($fetched_result['date']));
+		    echo  	'<h5 id="date">Date: '.$newDate.'</h5>';
 
 		      		if($fetched_result['billing_status'] == 'Complete'){
 		      			echo '<h4>Billing Status: <span class="text-success">'.$fetched_result['billing_status'].'</span</h4>';
