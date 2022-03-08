@@ -24,7 +24,7 @@
 	margin-top: 2px;
 }
 </style>
-
+<link rel="shortcut icon" href="IMAGES/img2/Logo.png" type="image/x-icon">
 
 <div id="top-bar">
 	<h2>Welcome !!! <?php echo "$name"; ?></h2>
