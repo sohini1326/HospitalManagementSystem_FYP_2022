@@ -41,7 +41,7 @@ $p_id=$_GET['p_id'];
 
 		require 'db_config.php';
 
-		$query="SELECT * FROM discharge_bed WHERE patient_id='$p_id' AND doctor_id='$doc_id'";
+		$query="SELECT * FROM discharge_bed d INNER JOIN beds b ON d.bed_id=b.bed_id INNER JOIN rooms r ON b.room_id=r.room_id WHERE patient_id='$p_id' AND doctor_id='$doc_id'";
 		$result=mysqli_query($conn,$query);
 		while($row=mysqli_fetch_assoc($result)){
 			echo '<div class="admit">
@@ -52,13 +52,20 @@ $p_id=$_GET['p_id'];
 					<h1>'.$row['health_issue'].'</h1>
 					<div class="down">
 						<div class="down_left">
-							<i class="fas fa-bed"></i>
-							<h4>Bed Allotment: '.$row['bed_id'].'</h4>
+							<i class="fas fa-hospital-user"></i>
+							<div class="location_desc">
+								<h4>Ward : '.$row['ward_type'].'</h4>
+								<div class="bed_room">
+									<h4>Bed : '.$row['bed_number'].'</h4>
+									<h4>Room : '.$row['room_number'].'</h4>
+								</div>
+							</div>	
 						</div>
 						<div class="down_right">';
 							$date_frmttd = date("d-m-Y", strtotime($row['admitted_date']));
 							$date_frmttd1 = date("d-m-Y", strtotime($row['discharge_date']));
-					echo	'<h4>Admitted on: '.$date_frmttd.'</h4>
+					echo	'<i class="fas fa-calendar-alt"></i>
+							<h4>Admitted on: '.$date_frmttd.'</h4>
 							<h4>Discharged on: '.$date_frmttd1.'</h4>
 						</div>
 					</div>

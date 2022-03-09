@@ -21,11 +21,11 @@ body{
 	background-color: #f2fbfb;
 	width: 65%;
 	margin: auto;
-  	height: 310px;
-  	border: 3px solid #008080;
-  	position: relative;
-  	margin-bottom: 7%;
-  	padding-top: 4%;
+  height: 345px;
+  border: 3px solid #008080;
+  position: relative;
+  margin-bottom: 7%;
+  padding-top: 4%;
 }
 .allotment{
   width: 59px;
@@ -43,10 +43,10 @@ body{
 }
 .allotment i{
 	font-size: 3.6rem;
-    position: absolute;
-    top: -95%;
-    left: 1%;
-    color: #008080;
+  position: absolute;
+  top: -95%;
+  left: 1%;
+  color: #008080;
 }
 .admit h2{
 	text-align: center;
@@ -60,20 +60,36 @@ body{
 }
 .down{
 	width: 100%;
-    position: absolute;
-    display: flex;
-    justify-content: space-around;
-    bottom: 0;
+  height: 30%;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  bottom: 0;
 }
 .admit h4{
 	font-family: 'Kanit', sans-serif;
 }
 .down_left,.down_right{
+  flex-basis: 45%;
 	display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 .down_left i,.down_right i{
 	font-size: 2rem;
+  margin-bottom: 6px;
+}
+.location_desc{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.bed_room{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
