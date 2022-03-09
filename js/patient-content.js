@@ -14,6 +14,7 @@ $(document).ready(function(){
 		$('#content4').addClass('hide');
 		$('#content5').addClass('hide');
 		$('#content6').addClass('hide');
+		$('#content7').addClass('hide');
 	});
 
     $('#appointment').click(function(){
@@ -28,6 +29,7 @@ $(document).ready(function(){
 		$('#content4').addClass('hide');
 		$('#content5').addClass('hide');
 		$('#content6').addClass('hide');
+		$('#content7').addClass('hide');
 	});
 	$('#previous').click(function(){
 		
@@ -69,6 +71,7 @@ $(document).ready(function(){
 		$('#content4').addClass('hide');
 		$('#content5').addClass('hide');
 		$('#content6').addClass('hide');
+		$('#content7').addClass('hide');
 	});
 
     $('#admission').click(function(){
@@ -82,6 +85,20 @@ $(document).ready(function(){
 		$('#content4').removeClass('hide');
 		$('#content5').addClass('hide');
 		$('#content6').addClass('hide');
+		$('#content7').addClass('hide');
+	});
+	$('#discharge').click(function(){
+		var current = $('.active');
+		current.removeClass('active');
+		$(this).addClass('active');
+
+		$('#content1').addClass('hide');
+		$('#content2').addClass('hide');
+		$('#content3').addClass('hide');
+		$('#content4').addClass('hide');
+		$('#content5').addClass('hide');
+		$('#content6').addClass('hide');
+		$('#content7').removeClass('hide');
 	});
 
 

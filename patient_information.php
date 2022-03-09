@@ -61,7 +61,7 @@ $patient_id = $_GET['pid'];
                
                 <a>
                 <i class="fas fa-user-tie"></i>
-                    Personal Details
+                   Patient's Personal Details
                 </a>
             </li>
             <li class="list-item" id="appointment">
@@ -82,9 +82,16 @@ $patient_id = $_GET['pid'];
                
                 <a>
                 <i class="fas fa-procedures"></i>
-                    Admission/Discharge Details
+                Patient's Admission Details
                 </a>
             </li>
+            <li class="list-item" id="discharge">
+               
+               <a>
+               <i class="fas fa-procedures"></i>
+               Patient's Discharge Details
+               </a>
+           </li>
         </ul>
     </div>
    
@@ -169,12 +176,12 @@ $patient_id = $_GET['pid'];
     
     <?php
            require "db_config.php";
-           $query6= "SELECT a.booking_id,a.date,a.time,a.issue,b.doctor_name,d.dept_name from checkup_bookings a inner join doctor_login b on a.doc_id=b.doctor_id inner join doc_dep c on b.doctor_id=c.doc_id inner join departments d on c.dept_id=d.dept_id where a.booker_id='$patient_id' and a.status='Complete'";
+           $query6= "SELECT a.booking_id,a.date,a.time,a.payment_status,a.payment_mode,a.issue,b.doctor_name,d.dept_name from checkup_bookings a inner join doctor_login b on a.doc_id=b.doctor_id inner join doc_dep c on b.doctor_id=c.doc_id inner join departments d on c.dept_id=d.dept_id where a.booker_id='$patient_id' and a.status='Complete'";
            $result6=mysqli_query($conn,$query6);
            $rowcount1=mysqli_num_rows($result6);
            if($rowcount1==0)
            {
-            $query6= "SELECT a.booking_id,a.date,a.time,a.issue,b.doctor_name,d.dept_name from checkup_bookings a inner join left_doctors b on a.doc_id=b.doctor_id inner join doc_dep c on b.doctor_id=c.doc_id inner join departments d on c.dept_id=d.dept_id where a.booker_id='$patient_id' and a.status='Complete'";
+            $query6= "SELECT a.booking_id,a.date,a.time,a.payment_status,a.payment_mode,a.issue,b.doctor_name,d.dept_name from checkup_bookings a inner join left_doctors b on a.doc_id=b.doctor_id inner join doc_dep c on b.doctor_id=c.doc_id inner join departments d on c.dept_id=d.dept_id where a.booker_id='$patient_id' and a.status='Complete'";
             $result6=mysqli_query($conn,$query6);
             $rowcount1=mysqli_num_rows($result6);
            }
@@ -197,7 +204,9 @@ $patient_id = $_GET['pid'];
           {
              while($row6=mysqli_fetch_assoc($result6))
              {
-               echo '<div class="mybox3">
+                $prevdate=$row6['date'];
+                $newDate1 = date("d-m-Y", strtotime($prevdate));
+                echo '<div class="mybox3">
                <div class="heading1">
                <p>Previous Appointments </p>
                </div> 
@@ -205,9 +214,11 @@ $patient_id = $_GET['pid'];
                <p>Booking ID: '.$row6['booking_id'].' </p>
                <p>Doctor Name: '.$row6['doctor_name'].'</p>
                <p>Department: '.$row6['dept_name'].'</p>
-               <p>Date: '.$row6['date'].'</p>
+               <p>Date: '. $newDate1.'</p>
                <p>Time: '.$row6['time'].'</p>
                <p>Health Issue: '.$row6['issue'].'</p>
+               <p>Payment Status: '.$row6['payment_status'].'</p>
+               <p>Payment Mode: '.$row6['payment_mode'].'</p>
              </div>
              </div>';  
              }
@@ -236,15 +247,17 @@ $patient_id = $_GET['pid'];
           {
              while($row7=mysqli_fetch_assoc($result7))
              {
-               echo '<div class="mybox4">
+                $nextdate=$row7['date'];
+                $newDate2 = date("d-m-Y", strtotime($nextdate));
+                echo '<div class="mybox4">
                <div class="heading1">
                <p>Upcoming Appointments </p>
                </div> 
-               <div class="appointments-info">
+               <div class="appointments-info1">
                <p>Booking ID: '.$row7['booking_id'].' </p>
                <p>Doctor Name: '.$row7['doctor_name'].'</p>
                <p>Department: '.$row7['dept_name'].'</p>
-               <p>Date: '.$row7['date'].'</p>
+               <p>Date: '.$newDate2.'</p>
                <p>Time: '.$row7['time'].'</p>
               
              </div>
@@ -267,9 +280,10 @@ $patient_id = $_GET['pid'];
     
     <?php
            require "db_config.php";
-           $query8= "SELECT a.booking_id,a.date,b.test_name,b.category from test_bookings a inner join labtest b on a.test_id=b.id WHERE a.booker_id='$patient_id'";
+           $query8= "SELECT a.booking_id,a.date,a.amount,a.payment_mode,a.payment_id,b.test_name,b.category from test_bookings a inner join labtest b on a.test_id=b.id WHERE a.booker_id='$patient_id'";
            $result8=mysqli_query($conn,$query8);
            $rowcount3=mysqli_num_rows($result8);
+           $today_date = date('Y-m-d');
        
     ?>
 
@@ -281,13 +295,29 @@ $patient_id = $_GET['pid'];
           {
              while($row8=mysqli_fetch_assoc($result8))
              {
-               echo '<div class="mybox1">
+                $testdate=$row8['date'];
+                $newDate3 = date("d-m-Y", strtotime($testdate));
+                $today_date = date('Y-m-d');
+                $message="";
+                if((($row8['payment_mode']=='Online') && ($row8['payment_id']!=NULL)) || ($row8['payment_mode']=='Cash' && $row8['date']<=$today_date))
+                {
+                   $message="Complete";
+                }
+                else{
+                    $message="Incomplete";
+                }
+               
+                echo '<div class="mybox1">
                <img src="IMAGES/image/labtest-img.png" id="icon1" width="200px" height="150px" alt=""> 
                <div class="labtest-info">
                <p>Booking ID: '.$row8['booking_id'].' </p>
                <p>Test Type: '.$row8['category'].'</p>
                <p>Test Name: '.$row8['test_name'].'</p>
-               <p>Booking Date: '.$row8['date'].'</p>
+               <p>Test Amount: '.$row8['amount'].'</p>
+               <p>Booking Date: '.$newDate3.'</p>
+               <p>Payment Status: '. $message.'</p>
+               <p>Payment Mode: '.$row8['payment_mode'].'</p>
+
              </div>
              </div>';  
              }
@@ -318,16 +348,6 @@ $patient_id = $_GET['pid'];
             $result9=mysqli_query($conn,$query9);
             $rowcount4=mysqli_num_rows($result9);  
            }
-
-           $query10="SELECT a.health_issue,a.admitted_date,a.discharge_date,b.doctor_name,c.bed_number,d.room_number,d.ward_type from discharge_bed a inner join doctor_login b on a.doctor_id=b.doctor_id inner join beds c on a.bed_id=c.bed_id inner join rooms d on c.room_id=d.room_id where a.patient_id='$patient_id'";
-           $result10=mysqli_query($conn,$query10);
-           $rowcount5=mysqli_num_rows($result10);
-           if($rowcount5==0)
-           {
-            $query10="SELECT a.health_issue,a.admitted_date,a.discharge_date,b.doctor_name,c.bed_number,d.room_number,d.ward_type from discharge_bed a inner join left_doctors b on a.doctor_id=b.doctor_id inner join beds c on a.bed_id=c.bed_id inner join rooms d on c.room_id=d.room_id where a.patient_id='$patient_id'";
-            $result10=mysqli_query($conn,$query10);
-            $rowcount5=mysqli_num_rows($result10);
-           }
        
          
     ?>
@@ -338,7 +358,9 @@ $patient_id = $_GET['pid'];
           if($rowcount4!=0)
              {
                 $row9=mysqli_fetch_assoc($result9);
-                 
+                $admitdate=$row9['admitted_date'];
+                $newDate4 = date("d-m-Y", strtotime($admitdate));
+               
                 echo  '<div class="mybox2">
                 <img src="IMAGES/image/admitted-patient.png" id="icon2" width="200px" height="120px" alt="">
                 <div class="heading">
@@ -350,36 +372,18 @@ $patient_id = $_GET['pid'];
                 <p>Ward Name: '.$row9['ward_type'].'</p>
                 <p>Doctor-in-charge: '.$row9['doctor_name'].'</p>
                 <p>Health Issue: '.$row9['health_issue'].'</p>
-                <p>Admitted Date: '.$row9['admitted_date'].'</p>
+                <p>Admitted Date: '.  $newDate4.'</p>
                 </div>
                 </div>';
              }
-             elseif($rowcount5!=0)
-             {
-                $row10=mysqli_fetch_assoc($result10);
-               
-                echo  '<div class="mybox2">
-                <img src="IMAGES/image/admitted-patient.png" id="icon2" width="200px" height="120px" alt="">
-                <div class="heading">
-                <p> DISCHARGED </p>
-                 </div>
-                <div class="admit-info">
-                <p>Bed No: '.$row10['bed_number'].' </p>
-                <p>Room No: '.$row10['room_number'].'</p>
-                <p>Ward Name: '.$row10['ward_type'].'</p>
-                <p>Doctor-in-charge: '.$row10['doctor_name'].'</p>
-                <p>Health Issue: '.$row10['health_issue'].'</p>
-                <p>Admitted Date: '.$row10['admitted_date'].'</p>
-                <p>Discharged Date: '.$row10['discharge_date'].'</p>
-                </div>
-                </div>';
-             }
+            
              else
              {
                  echo '<div class="mybox2">
                  <img src="IMAGES/image/admitted-patient.png" id="icon2" width="200px" height="120px" alt="">
                  <div id="message2">
-                 <p>No Admit/Discharge Records Found</p>
+                 <p>No Admission Records Found</p>
+                 </div>
                  </div>';
                  
                  
@@ -387,9 +391,64 @@ $patient_id = $_GET['pid'];
         
              
          ?>
-             
-             
-   
+         </div>    
+     
+
+     <?php
+       $query10="SELECT a.health_issue,a.admitted_date,a.discharge_date,a.billing_status,a.payment_mode,b.doctor_name,c.bed_number,d.room_number,d.ward_type from discharge_bed a inner join doctor_login b on a.doctor_id=b.doctor_id inner join beds c on a.bed_id=c.bed_id inner join rooms d on c.room_id=d.room_id where a.patient_id='$patient_id'";
+       $result10=mysqli_query($conn,$query10);
+       $rowcount5=mysqli_num_rows($result10);
+       if($rowcount5==0)
+       {
+        $query10="SELECT a.health_issue,a.admitted_date,a.discharge_date,b.doctor_name,c.bed_number,d.room_number,d.ward_type from discharge_bed a inner join left_doctors b on a.doctor_id=b.doctor_id inner join beds c on a.bed_id=c.bed_id inner join rooms d on c.room_id=d.room_id where a.patient_id='$patient_id'";
+        $result10=mysqli_query($conn,$query10);
+        $rowcount5=mysqli_num_rows($result10);
+       }
+     ?>
+
+     <div class="hide" id="content7">
+         <?php
+        if($rowcount5!=0)
+             {
+                while($row10=mysqli_fetch_assoc($result10))
+                {
+                  
+                    $admitdate=$row10['admitted_date'];
+                    $newDate5 = date("d-m-Y", strtotime($admitdate));
+                    $disdate=$row10['discharge_date'];
+                    $newDate6 = date("d-m-Y", strtotime($disdate));
+                echo  '<div class="mybox5">
+                <img src="IMAGES/image/admitted-patient.png" id="icon4" width="200px" height="120px" alt="">
+                <div class="heading2">
+                <p> DISCHARGED </p>
+                 </div>
+                <div class="discharge-info">
+                <p>Bed No: '.$row10['bed_number'].' </p>
+                <p>Room No: '.$row10['room_number'].'</p>
+                <p>Ward Name: '.$row10['ward_type'].'</p>
+                <p>Doctor-in-charge: '.$row10['doctor_name'].'</p>
+                <p>Health Issue: '.$row10['health_issue'].'</p>
+                <p>Admitted Date: '.$newDate5.'</p>
+                <p>Discharged Date: '.$newDate6.'</p>
+                <p>Payment Status: '.$row10['billing_status'].'</p>
+                <p>Payment Mode: '.$row10['payment_mode'].'</p>
+                </div>
+                </div>';
+                }
+                
+             }
+        else
+             {
+                 echo '<div class="mybox5">
+                 <img src="IMAGES/image/admitted-patient.png" id="icon4" width="200px" height="120px" alt="">
+                 <div id="message2">
+                 <p>No Discharge Records Found</p>
+                 </div>
+                 </div>';
+                 
+                 
+            }
+    ?>
 
     </div>
 
