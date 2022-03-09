@@ -69,7 +69,7 @@
 .navbar ul li {
     display: inline;
     list-style: none;
-    padding-left: 30px;
+    padding-left: 10px;
     padding-right: 30px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -78,6 +78,7 @@
     position: relative;
     cursor: pointer;
     font-family: 'Playfair Display', serif;
+    text-align: center;
 }
 
 .navbar ul li.active {
@@ -87,6 +88,7 @@
 .navbar ul li a {
     text-decoration: none;
     color: #fff;
+    text-align: center;
 }
 
 .navbar ul li.active a {
@@ -345,7 +347,7 @@ li.active a::after {
 .back
 {
     position:absolute;
-    top:28%;
+    top:32%;
     left:95%;
     font-size: 50px;
     cursor: pointer;
@@ -419,7 +421,7 @@ li.active a::after {
     font-family: 'Roboto Slab', serif;
     font-size: 22px;
     font-weight:bold;
-    line-height: 40px;
+    line-height: 20px;
     text-align: center;
 
 }
@@ -428,10 +430,11 @@ li.active a::after {
 {
    
     position: absolute;
-    top:30%;
+    top:35%;
     left:35%;
     width:60%;
     height:100%;
+    
    
    
 
@@ -444,7 +447,7 @@ li.active a::after {
     position: relative;
     left:30%;
     width:400px;
-    height:68vh;
+    height:65vh;
     border-radius:20px;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
@@ -457,7 +460,6 @@ li.active a::after {
 #icon2
 {
     position:absolute;
-   
     left:23%;
 }
 .heading
@@ -499,14 +501,15 @@ li.active a::after {
    display: flex;
    flex-wrap: wrap;
    justify-content: space-evenly;
+   
   
 }
 .mybox3{
     
     
-    margin:20px auto;
+    margin:10px auto;
     flex-basis: 40%;
-	height:62vh;
+	height:65vh;
     border-radius:20px;
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
@@ -525,13 +528,25 @@ li.active a::after {
     font-family: 'Mochiy Pop P One', sans-serif;
     font-size: 30px;
     position:relative;
-    top:5%;
     text-align: center;
     color: black;
 
 }
 
 .appointments-info
+{
+    position:relative;
+    top:5%;
+    font-family: 'Roboto Slab', serif;
+    font-size: 22px;
+    font-weight:bolder;
+    line-height: 30px;
+    text-align: center;
+    letter-spacing: 1px;
+    color: black;
+    
+}
+.appointments-info1
 {
     position:relative;
     top:15%;
@@ -574,4 +589,61 @@ li.active a::after {
     background-size: cover;
     box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 20px;
     
+}
+
+#content7
+{
+    
+  
+   position: absolute;
+   top:30%;
+   left:35%;
+   width:60%;
+   height:auto;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   
+  
+   
+
+}
+.mybox5{
+    
+    
+    margin:20px auto;
+    flex-basis: 45%;
+	height:80vh;
+    border-radius:20px;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+    background:linear-gradient(to top,#68f198,#ad84e2);
+    box-shadow: rgba(0, 0, 0, 0.8) 5px 10px 20px;
+    
+}
+#icon4
+{
+    position:relative;
+    top:2%;
+    left:25%;
+}
+
+.discharge-info
+{
+    position:relative;
+    font-family: 'Roboto Slab', serif;
+    font-size: 22px;
+    font-weight:bold;
+    line-height: 30px;
+    text-align: center;
+
+}
+.heading2
+{
+    position: relative;
+    top:2%;
+    text-align: center;
+    font-family: 'Playfair Display SC', serif;
+    font-size: 35px;
+    color: rgb(82, 14, 14);
 }
