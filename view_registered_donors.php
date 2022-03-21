@@ -31,6 +31,11 @@ $name = $_SESSION['admin_name'];
 </head>
 <body>
     <?php include 'includes/admin_navbar.php'?>
+    <div class="row w-100 mb-4 mt-4">
+        <div class="col text-right">
+            <a href="organ_donation_management.php"><i class="fa fa-angle-double-left mr-2"></i>Go Back to Organ Donation Dashboard</a>
+        </div>
+    </div>
     <div style="margin:15px;">
             <table id="myTable1" class="table table-dark table-bordered table-hover">
                 <thead class="thead-light">
@@ -62,7 +67,7 @@ $name = $_SESSION['admin_name'];
                                     <td>'.$row['Donor_Registration_Num'].'</td>
                                     <td>'.$row['donor_name'].'</td>
                                     <td>'.$row['adhaar_no'].'</td>
-                                    <td><a href="'.$cardURL.'">View Adhaar Card</a></td>
+                                    <td><a href="'.$cardURL.'"  target="_blank">View Adhaar Card</a></td>
                                     <td>
                                         <a href="view_all_donor_details.php?donor_reg_num='.$row['Donor_Registration_Num'].'&donation_type=Living" data-toggle="tooltip" data-placement="bottom" title="VIEW ALL DETAILS"><i class="fas fa-eye icon-size mr-4"></i></a>
                                         <a class="addbtn" data-toggle="tooltip" data-placement="bottom" title="ADD DONATION DETAILS"><i class="fas fa-plus icon-size"></i></a>
@@ -147,7 +152,7 @@ $name = $_SESSION['admin_name'];
                     
                                 <div class="form-group">
                                     <label for="recepient_reg_name"><b>Recepient Name</b><span class="required">*</span></label>
-                                    <select class="custom-select form-control" id="recepient_reg_name" name="recepient_reg_name" required>
+                                    <!-- <select class="custom-select form-control" id="recepient_reg_name" name="recepient_reg_name" required>
                                             <option value="none" selected disabled hidden>--SELECT--</option>
                                             <?php
                                                 $query = "SELECT * FROM recepient_reg";
@@ -156,7 +161,8 @@ $name = $_SESSION['admin_name'];
                                                     echo '<option value="'.$row['recepient_name'].'">'.$row['recepient_name'].'</option>';
                                                 }
                                             ?>
-                                        </select>
+                                        </select> -->
+                                        <input type="name" class="form-control" id="recepient_reg_name" name="recepient_reg_name" readonly>
                                 </div>
                     <div class="row">
                         <div class="col-md-12 two-form">
@@ -320,12 +326,13 @@ $name = $_SESSION['admin_name'];
             });
         </script>
     <script type="text/javascript">
-        $(document).ready(function(){
-            var rec_reg_id1 = $('#recepient_reg_id').val();
+        $('#recepient_reg_id').change(function(){
+            var rec_reg_id = $('#recepient_reg_id').val();
             $.ajax({
-                url:'view_registered_donors.php',
-                type: 'post',
-                data: {id: rec_reg_id1}, //Pass the id
+                url:'registered_recepient_name.php?rec_reg_id='+rec_reg_id,
+                success:function(data){
+				$('#recepient_reg_name').attr("value",data);
+			}
         });
         })
     </script>

@@ -30,7 +30,13 @@ $name = $_SESSION['admin_name'];
 
 </head>
 <body>
+
     <?php include 'includes/admin_navbar.php'?>
+    <div class="row w-100 mb-4 mt-4">
+            <div class="col text-right">
+                <a href="organ_donation_management.php"><i class="fa fa-angle-double-left mr-2"></i>Go Back to Organ Donation Dashboard</a>
+            </div>
+        </div>
     <div style="margin:15px;">
             <table id="myTable" class="table table-dark table-bordered table-hover">
                 <thead class="thead-light">

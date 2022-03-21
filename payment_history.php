@@ -120,7 +120,7 @@ $mail = $_SESSION['patient_email'];
                                         $query = "SELECT a.booking_id, a.date,a.amount,a.payment_mode,a.payment_id, b.test_name, c.bill_doc 
                                                   FROM test_bookings a INNER JOIN labtest b ON a.test_id=b.id 
                                                   INNER JOIN labtest_bill c ON a.booking_id=c.booking_id 
-                                                  WHERE a.booker_id=$id AND ((a.payment_mode='Online' AND a.payment_id IS NOT NULL) OR (a.payment_mode='Cash' AND a.date<=CURDATE()))";
+                                                  WHERE a.booker_id=$id AND ((a.payment_id IS NOT NULL) OR (a.payment_mode='Cash' AND a.date<=CURDATE()))";
                                         $result=mysqli_query($conn,$query);
                                         if(mysqli_num_rows($result)==0){
                                             echo '<tr>

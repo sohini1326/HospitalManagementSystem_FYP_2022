@@ -85,9 +85,9 @@ if($receive_organ == '' && $receive_tissue == ''){
     $rec_medical_query = "INSERT INTO recepient_medical_info VALUES('$recepient_reg_id','$receive_organ','$receive_tissue','$medical_condition','$doctor_name','$prescription')";
     if(mysqli_query($conn,$rec_reg_query)){
         if(mysqli_query($conn,$rec_personal_query) && mysqli_query($conn,$rec_contact_query) && mysqli_query($conn,$rec_emergency_query) && mysqli_query($conn,$rec_medical_query)){
-            $_SESSION['status'] = "THANK YOU ".$recepient_name;
+            $_SESSION['status'] = "Thank You ".$recepient_name;
             $_SESSION['status_code'] = "success";
-            $_SESSION['status_text'] = "Check your mail for registration status and updates.";
+            $_SESSION['status_text'] = "You will be contacted.";
             header('Location:organ_donation_dashboard.php');
         }else{
             $_SESSION['status'] = "FAILED";

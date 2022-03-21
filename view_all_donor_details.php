@@ -105,7 +105,7 @@ $age = $from->diff($to)->y;
                                 <b>Adhaar Card Number:  </b><?php echo $reg_row['adhaar_no'];?>
                             </div>
                             <div class="col-md-6 text-right">
-                                <b>View Adhaar Card:  </b><a href="<?php echo $cardURL; ?>">View Adhaar Card</a>
+                                <b>View Adhaar Card:  </b><a href="<?php echo $cardURL; ?>"  target="_blank">View Adhaar Card</a>
                             </div>
                         </div>
                         <div class="row mt-4 mb-4 data">
@@ -203,7 +203,7 @@ $age = $from->diff($to)->y;
                             <b>Tissues:  </b><?php echo $declaration_row['tissues'];?>
                         </div>
                         <div class="col-md-12">
-                            <b>Donor Card:  </b><a href="<?php echo $donorCard; ?>">View Donor Card</a>
+                            <b>Donor Card:  </b><a href="<?php echo $donorCard; ?>"  target="_blank">View Donor Card</a>
                         </div>
                         <div class="col-md-12">
                             <?php

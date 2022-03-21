@@ -33,7 +33,7 @@ if(mysqli_query($conn,$query)){
     $mail->Host       = 'smtp.gmail.com';                     
     $mail->SMTPAuth   = true;                                   
     $mail->Username   = 'carevista7@gmail.com';                    
-    $mail->Password   = 'carevista@123';                             
+    $mail->Password   = 'CareVista@2022';                             
     $mail->SMTPSecure = 'tls';   
     $mail->Port       = 587;    
 
@@ -56,18 +56,25 @@ if(mysqli_query($conn,$query)){
                         <br><br>
                         <b><i>Thank You</i></b><br>
                         <b><i>CareVista Superspeciality Hospital</i></b><br>';
+    $mail->SMTPOptions = array(
+                            'ssl' => array(
+                                'verify_peer' => false,
+                                'verify_peer_name' => false,
+                                'allow_self_signed' => true
+                            )
+                       );
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     if($mail->send()){
         $_SESSION['status'] = "SUCCESSFUL";
         $_SESSION['status_code'] = "success";
-        $_SESSION['status_text'] = "Application of".$donor_name." rejected";
+        $_SESSION['status_text'] = "Application of ".$donor_name." rejected";
         header('Location:view_pending_donors.php');
     }
     else{
         $_SESSION['status'] = "FAILED";
         $_SESSION['status_code'] = "error";
-        $_SESSION['status_text'] = "Donor Card cannot be Mailed to ".$donor_name;
+        $_SESSION['status_text'] = "Rejection Mail to ".$donor_name;
         header('Location:view_pending_donors.php');
     }
 }
