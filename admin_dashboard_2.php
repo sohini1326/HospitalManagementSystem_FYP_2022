@@ -62,7 +62,7 @@ $name = $_SESSION['admin_name'];
 					</div>
 					<div class="functions" style="background-color: #f0efeb;">
 						<h4>Lab Tests Management</h4>
-						<a href="" class="btn btn-dark">Visit</a>
+						<a href="lab_test_management_dashboard.php" class="btn btn-dark">Visit</a>
 					</div>
 					<a href="admin_dashboard.php" class="btn btn-dark" style="position: absolute;
     					right: 114px;bottom: 73px;">
