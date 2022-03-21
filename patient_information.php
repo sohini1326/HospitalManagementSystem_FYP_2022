@@ -176,21 +176,37 @@ $patient_id = $_GET['pid'];
     
     <?php
            require "db_config.php";
-           $query6= "SELECT a.booking_id,a.date,a.time,a.payment_status,a.payment_mode,a.issue,b.doctor_name,d.dept_name from checkup_bookings a inner join doctor_login b on a.doc_id=b.doctor_id inner join doc_dep c on b.doctor_id=c.doc_id inner join departments d on c.dept_id=d.dept_id where a.booker_id='$patient_id' and a.status='Complete'";
+           $query6= "SELECT a.booking_id,a.date,a.time,a.payment_status,a.payment_mode,a.issue,b.doctor_name,d.dept_name 
+                    from checkup_bookings a inner join doctor_login b on a.doc_id=b.doctor_id 
+                    inner join doc_dep c on b.doctor_id=c.doc_id 
+                    inner join departments d on c.dept_id=d.dept_id 
+                    where a.booker_id='$patient_id' and a.status='Complete'";
            $result6=mysqli_query($conn,$query6);
            $rowcount1=mysqli_num_rows($result6);
            if($rowcount1==0)
            {
-            $query6= "SELECT a.booking_id,a.date,a.time,a.payment_status,a.payment_mode,a.issue,b.doctor_name,d.dept_name from checkup_bookings a inner join left_doctors b on a.doc_id=b.doctor_id inner join doc_dep c on b.doctor_id=c.doc_id inner join departments d on c.dept_id=d.dept_id where a.booker_id='$patient_id' and a.status='Complete'";
+            $query6= "SELECT a.booking_id,a.date,a.time,a.payment_status,a.payment_mode,a.issue,b.doctor_name,d.dept_name 
+                      from checkup_bookings a inner join left_doctors b on a.doc_id=b.doctor_id 
+                      inner join doc_dep c on b.doctor_id=c.doc_id 
+                      inner join departments d on c.dept_id=d.dept_id 
+                      where a.booker_id='$patient_id' and a.status='Complete'";
             $result6=mysqli_query($conn,$query6);
             $rowcount1=mysqli_num_rows($result6);
            }
-           $query7= "SELECT a.booking_id,a.date,a.time,b.doctor_name,d.dept_name from checkup_bookings a inner join doctor_login b on a.doc_id=b.doctor_id inner join doc_dep c on b.doctor_id=c.doc_id inner join departments d on c.dept_id=d.dept_id where a.booker_id='$patient_id'  and a.status='Incomplete'";
+           $query7= "SELECT a.booking_id,a.date,a.time,b.doctor_name,d.dept_name 
+                     from checkup_bookings a inner join doctor_login b on a.doc_id=b.doctor_id 
+                     inner join doc_dep c on b.doctor_id=c.doc_id 
+                     inner join departments d on c.dept_id=d.dept_id 
+                     where a.booker_id='$patient_id' and a.status='Incomplete'";
            $result7=mysqli_query($conn,$query7);
            $rowcount2=mysqli_num_rows($result7);
            if($rowcount2==0)
            {
-            $query7= "SELECT a.booking_id,a.date,a.time,b.doctor_name,d.dept_name from checkup_bookings a inner join left_doctors b on a.doc_id=b.doctor_id inner join doc_dep c on b.doctor_id=c.doc_id inner join departments d on c.dept_id=d.dept_id where a.booker_id='$patient_id'  and a.status='Incomplete'";
+            $query7= "SELECT a.booking_id,a.date,a.time,b.doctor_name,d.dept_name 
+                      from checkup_bookings a inner join left_doctors b on a.doc_id=b.doctor_id 
+                      inner join doc_dep c on b.doctor_id=c.doc_id 
+                      inner join departments d on c.dept_id=d.dept_id 
+                      where a.booker_id='$patient_id'  and a.status='Incomplete'";
             $result7=mysqli_query($conn,$query7);
             $rowcount2=mysqli_num_rows($result7);  
            }
@@ -280,7 +296,9 @@ $patient_id = $_GET['pid'];
     
     <?php
            require "db_config.php";
-           $query8= "SELECT a.booking_id,a.date,a.amount,a.payment_mode,a.payment_id,b.test_name,b.category from test_bookings a inner join labtest b on a.test_id=b.id WHERE a.booker_id='$patient_id'";
+           $query8= "SELECT a.booking_id,a.date,a.amount,a.payment_mode,a.payment_id,b.test_name,b.category 
+                     from test_bookings a inner join labtest b on a.test_id=b.id 
+                     WHERE a.booker_id='$patient_id'";
            $result8=mysqli_query($conn,$query8);
            $rowcount3=mysqli_num_rows($result8);
            $today_date = date('Y-m-d');
@@ -299,7 +317,7 @@ $patient_id = $_GET['pid'];
                 $newDate3 = date("d-m-Y", strtotime($testdate));
                 $today_date = date('Y-m-d');
                 $message="";
-                if((($row8['payment_mode']=='Online') && ($row8['payment_id']!=NULL)) || ($row8['payment_mode']=='Cash' && $row8['date']<=$today_date))
+                if(($row8['payment_id']!=NULL) || ($row8['payment_mode']=='Cash' && $row8['date']<=$today_date))
                 {
                    $message="Complete";
                 }
@@ -339,12 +357,20 @@ $patient_id = $_GET['pid'];
 
      <?php
            require "db_config.php";
-           $query9= "SELECT a.health_issue,a.admitted_date,b.doctor_name,c.bed_number,d.room_number,d.ward_type from bed_allotments a inner join doctor_login b on a.doctor_id=b.doctor_id inner join beds c on a.bed_id=c.bed_id inner join rooms d on c.room_id=d.room_id where a.patient_id='$patient_id'"; 
+           $query9= "SELECT a.health_issue,a.admitted_date,b.doctor_name,c.bed_number,d.room_number,d.ward_type 
+                     from bed_allotments a inner join doctor_login b on a.doctor_id=b.doctor_id 
+                     inner join beds c on a.bed_id=c.bed_id 
+                     inner join rooms d on c.room_id=d.room_id 
+                     where a.patient_id='$patient_id'"; 
            $result9=mysqli_query($conn,$query9);
            $rowcount4=mysqli_num_rows($result9);
            if($rowcount4==0)
            {
-            $query9= "SELECT a.health_issue,a.admitted_date,b.doctor_name,c.bed_number,d.room_number,d.ward_type from bed_allotments a inner join left_doctors b on a.doctor_id=b.doctor_id inner join beds c on a.bed_id=c.bed_id inner join rooms d on c.room_id=d.room_id where a.patient_id='$patient_id'"; 
+            $query9= "SELECT a.health_issue,a.admitted_date,b.doctor_name,c.bed_number,d.room_number,d.ward_type 
+                      from bed_allotments a inner join left_doctors b on a.doctor_id=b.doctor_id 
+                      inner join beds c on a.bed_id=c.bed_id 
+                      inner join rooms d on c.room_id=d.room_id 
+                      where a.patient_id='$patient_id'"; 
             $result9=mysqli_query($conn,$query9);
             $rowcount4=mysqli_num_rows($result9);  
            }
@@ -395,12 +421,20 @@ $patient_id = $_GET['pid'];
      
 
      <?php
-       $query10="SELECT a.health_issue,a.admitted_date,a.discharge_date,a.billing_status,a.payment_mode,b.doctor_name,c.bed_number,d.room_number,d.ward_type from discharge_bed a inner join doctor_login b on a.doctor_id=b.doctor_id inner join beds c on a.bed_id=c.bed_id inner join rooms d on c.room_id=d.room_id where a.patient_id='$patient_id'";
+       $query10="SELECT a.health_issue,a.admitted_date,a.discharge_date,a.billing_status,a.payment_mode,b.doctor_name,c.bed_number,d.room_number,d.ward_type 
+                 from discharge_bed a inner join doctor_login b on a.doctor_id=b.doctor_id 
+                 inner join beds c on a.bed_id=c.bed_id 
+                 inner join rooms d on c.room_id=d.room_id 
+                 where a.patient_id='$patient_id'";
        $result10=mysqli_query($conn,$query10);
        $rowcount5=mysqli_num_rows($result10);
        if($rowcount5==0)
        {
-        $query10="SELECT a.health_issue,a.admitted_date,a.discharge_date,b.doctor_name,c.bed_number,d.room_number,d.ward_type from discharge_bed a inner join left_doctors b on a.doctor_id=b.doctor_id inner join beds c on a.bed_id=c.bed_id inner join rooms d on c.room_id=d.room_id where a.patient_id='$patient_id'";
+        $query10="SELECT a.health_issue,a.admitted_date,a.discharge_date,b.doctor_name,c.bed_number,d.room_number,d.ward_type 
+                 from discharge_bed a inner join left_doctors b on a.doctor_id=b.doctor_id 
+                 inner join beds c on a.bed_id=c.bed_id 
+                 inner join rooms d on c.room_id=d.room_id 
+                 where a.patient_id='$patient_id'";
         $result10=mysqli_query($conn,$query10);
         $rowcount5=mysqli_num_rows($result10);
        }

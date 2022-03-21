@@ -32,7 +32,11 @@ $name = $_SESSION['admin_name'];
 
     <body>
         <?php include 'includes/admin_navbar.php'?>
-
+        <div class="row w-100 mb-4 mt-4">
+            <div class="col text-right">
+                <a href="organ_donation_management.php"><i class="fa fa-angle-double-left mr-2"></i>Go Back to Organ Donation Dashboard</a>
+            </div>
+        </div>
         <div style="margin:15px;">
             <table id="myTable1" class="table table-dark table-bordered table-hover">
                 <thead class="thead-light">
@@ -64,7 +68,7 @@ $name = $_SESSION['admin_name'];
                                     <td>'.$row['Donor_Registration_Num'].'</td>
                                     <td>'.$row['donor_name'].'</td>
                                     <td>'.$row['adhaar_no'].'</td>
-                                    <td><a href="'.$cardURL.'">View Adhaar Card</a></td>
+                                    <td><a href="'.$cardURL.'" target="_blank">View Adhaar Card</a></td>
                                     <td>
                                         <a href="approve_donor_details.php?donor_reg_num='.$row['Donor_Registration_Num'].'&donation_type=Living" class="btn btn-success">Approve</a>
                                         <a href="reject_donor_details.php?donor_reg_num='.$row['Donor_Registration_Num'].'&donation_type=Living" class="btn btn-danger">Reject</a>
@@ -108,7 +112,7 @@ $name = $_SESSION['admin_name'];
                                     <td>'.$row['Donor_Registration_Num'].'</td>
                                     <td>'.$row['donor_name'].'</td>
                                     <td>'.$row['adhaar_no'].'</td>
-                                    <td><a href="'.$cardURL.'">View Adhaar Card</a></td>
+                                    <td><a href="'.$cardURL.'"  target="_blank">View Adhaar Card</a></td>
                                     <td>
                                         <a href="approve_donor_details.php?donor_reg_num='.$row['Donor_Registration_Num'].'&donation_type=Deceased" class="btn btn-success">Approve</a>
                                         <a href="reject_donor_details.php?donor_reg_num='.$row['Donor_Registration_Num'].'&donation_type=Deceased" class="btn btn-danger">Reject</a>

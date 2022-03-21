@@ -31,6 +31,13 @@ $name = $_SESSION['admin_name'];
 </head>
 <body>
     <?php include 'includes/admin_navbar.php'?>
+    
+    <div class="row w-100 mb-4 mt-4">
+            <div class="col text-right">
+                <a href="organ_donation_management.php"><i class="fa fa-angle-double-left mr-2"></i>Go Back to Organ Donation Dashboard</a>
+            </div>
+        </div>
+    
     <div style="margin:15px;">
             <table id="myTable1" class="table table-dark table-bordered table-hover">
                 <thead class="thead-light">
@@ -62,7 +69,7 @@ $name = $_SESSION['admin_name'];
                                     <td>'.$row['Recepient_reg_num'].'</td>
                                     <td>'.$row['recepient_name'].'</td>
                                     <td>'.$row['adhaar_no'].'</td>
-                                    <td><a href="'.$cardURL.'">View Adhaar Card</a></td>
+                                    <td><a href="'.$cardURL.'"  target="_blank">View Adhaar Card</a></td>
                                     <td>
                                         <a href="view_all_recepient_details.php?recepient_reg_num='.$row['Recepient_reg_num'].'"><i class="fas fa-eye icon-size"></i></a>
                                     </td>

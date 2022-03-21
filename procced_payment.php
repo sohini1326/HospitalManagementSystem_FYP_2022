@@ -152,7 +152,7 @@ if($payment_type==3){
             var payment_type = jQuery('#payment_type').val();
             console.log(b_id);
             var options = {
-            "key": "rzp_test_apHiJcgfDobbIN", // Enter the Key ID generated from the Dashboard
+            "key": "rzp_test_mE9XDNP376RHLY", // Enter the Key ID generated from the Dashboard
             "amount": "<?php echo $amount; ?>"*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "CareVista Superspeciality Hospital",
@@ -163,7 +163,7 @@ if($payment_type==3){
                 jQuery.ajax({
                     type:'post',
                     url: 'payment_process.php',
-                    data: "payment_id="+response.razorpay_payment_id+"&bid="+b_id+"&payment_type="+payment_type,
+                    data: "payment_id="+response.razorpay_payment_id+"&bid="+b_id+"&payment_type="+payment_type+"&payment_method="+response.method,
                     success:function(result){
                         window.location.href="payment_gateway.php?payment_type=<?php echo $payment_type;?>'"
                     }
