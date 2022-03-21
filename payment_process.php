@@ -1,7 +1,7 @@
 <?php
 
 require "db_config.php";
-include '/razorpay_php/razorpay_php/Razorpay.php';
+require 'razorpay-php/razorpay-php/Razorpay.php';
 use Razorpay\Api\Api;
 session_start();
 
@@ -42,7 +42,6 @@ if(isset($_POST['payment_id']) && isset($_POST['bid']) && isset($_POST['payment_
             $_SESSION['status_code'] = "success";
             $_SESSION['status_text'] = "Payment Successful";
             header('Location:payment_gateway.php?payment_type=2');
-            echo "SUCCESS";
         
         }
         else{
