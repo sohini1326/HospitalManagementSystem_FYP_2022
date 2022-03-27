@@ -98,10 +98,10 @@ if($payment_type==1){
                 console.log(response);
                 jQuery.ajax({
                     type:'post',
-                    url: 'payment_process.php',
+                    url: 'payment_vaccine_process.php',
                     data: "payment_id="+response.razorpay_payment_id+"&bid="+b_id+"&payment_type="+payment_type+"&payment_method="+response.method,
                     success:function(result){
-                        window.location.href="payment_vaccination_success.php?booking_id=<?php echo $booking_id;?>'"
+                        window.location.href="payment_vaccination_success.php?booking_id=<?php echo $booking_id;?>"
                     }
                 })
                 alert('Payment Successful');
