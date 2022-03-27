@@ -206,7 +206,7 @@ $booking_id=$_GET['booking_id'];
      echo ' <div class="cen"> Day: '.$date.'<br></div> ';
      echo '  <div class="cen">Cost: '.$cost.'<br></div> ';
         if($payment_status == 'INCOMPLETE'){
-           echo' <button class="white-mode">Pay Now</button>';
+           echo' <a href="proceed_payment_vaccination.php?unique_id='.$booking_id.'"><button class="white-mode">Pay Now</button></a>';
         }
         else{
             echo '  <div class="cen">Payment status: COMPLETE<br></div> ';

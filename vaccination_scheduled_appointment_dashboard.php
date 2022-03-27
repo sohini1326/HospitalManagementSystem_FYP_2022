@@ -20,7 +20,7 @@ background: #DFC2F2;
 	text-align: center;
 	border-radius: 5px;
 	margin: 5em auto;
-	height: 350px;
+	height: 380px;
 	width: 600px;
 }
 
@@ -83,7 +83,7 @@ font-family: 'EB Garamond', serif;
 	border: none;
 	color: #eee;
 	padding: 0;
-	margin: 0;
+	margin-top: 10;
 	
 }
 
