@@ -1,6 +1,7 @@
 <?php
 include "./db_config.php";
 session_start();
+$stock=0;
 
 if(isset($_GET['delete'])){
   $sno = $_GET['delete'];
