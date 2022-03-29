@@ -236,7 +236,18 @@ background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
       if($day7!=NULL && $time7!=NULL){
 				echo '<h4 class="timings">'.$day7.': '.$time7.'</h4>';
 			}
+    
 		?>
+    <?php
+    $time="";
+    if(empty($time3)){
+      $time=$time4;
+    }
+    else{
+      $time=$time3;
+    }
+   
+    ?>
 
 	</div>
             </div>
@@ -316,6 +327,8 @@ background-image: linear-gradient(180deg, #A9C9FF 0%, #FFBBEC 100%);
       <input type="hidden" name="booking_id" value="<?php echo "$booking_id"; ?>" hidden>
       <input type="hidden" name="vaccination_booker_name" value="<?php echo "$name"; ?>" hidden>
       <input type="hidden" name="vaccination_booker_id" value="<?php echo "$id"; ?>" hidden>
+      <input type="hidden" name="vaccination_booker_time" value="<?php echo "$time"; ?>" hidden>
+     
 					<a href="./vaccination_booking_success.php"><button>Book now</button></a>
 				</form>
 			</div>
