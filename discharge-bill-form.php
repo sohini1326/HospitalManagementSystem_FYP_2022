@@ -16,7 +16,7 @@ $newDate2 = date("d-m-Y", strtotime($disdate));
 $health_issue=$_GET['health'];
 
 $diff=date_diff(date_create($admitdate),date_create($disdate));
-$days = $diff->format('%d days');
+$days = $diff->format('%d')+1;
 
 ?>
 
@@ -68,7 +68,7 @@ $days = $diff->format('%d days');
                   <p><b>Room / Bed No :</b> <?php echo $room.' / '.$bed;?></p></p>
                   <p><b>Admitted Date :</b> <?php echo $newDate1;?></p>
                   <p><b>Discharged Date :</b>  <?php echo $newDate2;?></p>
-                  <p><b>No Of Days Spent :</b> <?php echo $days;?></p>
+                  <p><b>No Of Days Spent :</b> <?php echo $days.' days';?></p>
               </div>
     <?php
     
