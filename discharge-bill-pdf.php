@@ -46,8 +46,7 @@ $diff=date_diff($date1,$date2);
 $age = $diff->format('%y yrs');
 
 $diff=date_diff(date_create($admitdate),date_create($disdate));
-$days = $diff->format('%d days');
-$Qty= $diff->format('%d');
+$Qty= $diff->format('%d')+1;
 $price1=$bed_charge*$Qty;
 $price2=$doc_charge*$Qty;
 $price3=$nurse_charge*$Qty;
@@ -112,7 +111,7 @@ $html='<div class="upper">
         </div>
         <div class="row">
         <div class="col1">
-        <p><b>No of days Admitted:</b>  '.$days.'</p>
+        <p><b>No of days Admitted:</b>  '.$Qty.' days </p>
         </div>
         <div class="col2">
         <p><b>Consultant Doctor:</b>'.$row['doctor_name'].'</p>

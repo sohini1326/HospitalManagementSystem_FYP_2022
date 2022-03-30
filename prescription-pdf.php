@@ -58,6 +58,9 @@ if($rowcount2==0)
   if($day3!=NULL && $time3!=NULL){
     $timing3=$day3.' : '.$time3;
   }
+  if($day3==NULL && $time3==NULL){
+    $timing3='';
+}
 
 
  $html='<div class="icon1">
