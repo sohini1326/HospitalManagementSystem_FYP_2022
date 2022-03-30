@@ -32,6 +32,8 @@ $p_id=$_SESSION['patient_id'];
 
 	<?php include 'includes/patient_navbar.php';?>
 
+	<a href="rejected_hcs.php?p_id=<?php echo $p_id; ?>" class="btn btn-danger" id="rjct_btn">Rejected Schemes</a>
+
 	<?php 
 
 	require 'db_config.php';
@@ -146,11 +148,15 @@ $p_id=$_SESSION['patient_id'];
 	</div>';
 	}
 }
-	else{
-		echo '<div class="no_approved_scheme">
+	else{ 
+
+		
+			echo '<div class="no_approved_scheme">
 				<h1>You have not subscribed to any health scheme yet...</h1>
 				<h3>To subscribe...<a href="health_card_schemes_landing_page.php">Visit</a></h3>
 			</div>';
+		
+		
 	}
 }
 	?>
