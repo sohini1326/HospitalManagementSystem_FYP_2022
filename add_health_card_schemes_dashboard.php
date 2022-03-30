@@ -84,8 +84,8 @@ $name=$_SESSION['admin_name'];
 				<td>'.$row['city'].'</td>
 				<td>'.$row['scheme_name'].'</td>
 				<td>
-					<a href="approve_hcs.php?p_id='.$row['id'].'&s_id='.$row['s_id'].'" class="btn btn-success">Approve</a>
-					<a href="reject_hcs.php?p_id='.$row['id'].'&s_id='.$row['s_id'].'" class="btn btn-danger">Reject</a>
+					<a href="approve_hcs.php?app_id='.$row['application_id'].'" class="btn btn-success">Approve</a>
+					<a href="reject_hcs.php?app_id='.$row['application_id'].'" class="btn btn-danger">Reject</a>
 				</td>
 			</tr>';
 			}
@@ -133,8 +133,8 @@ $name=$_SESSION['admin_name'];
 				<td>'.$row['scheme_name'].'</td>
 				<td><a href="view_fam_membrs_hcs.php?p_id='.$row['id'].'&page=1" id="fam_members"><i class="fas fa-eye"></i></a></td>
 				<td>
-					<a href="approve_hcs.php?p_id='.$row['id'].'&s_id='.$row['s_id'].'" class="btn btn-success">Approve</a>
-					<a href="reject_hcs.php?p_id='.$row['id'].'&s_id='.$row['s_id'].'" class="btn btn-danger">Reject</a>
+					<a href="approve_hcs.php?app_id='.$row['application_id'].'" class="btn btn-success">Approve</a>
+					<a href="reject_hcs.php?app_id='.$row['application_id'].'" class="btn btn-danger">Reject</a>
 				</td>
 			</tr>';
 			}
@@ -179,8 +179,8 @@ $name=$_SESSION['admin_name'];
 				<td>'.$row['city'].'</td>
 				<td>'.$row['scheme_name'].'</td>
 				<td>
-					<a href="approve_hcs.php?p_id='.$row['id'].'&s_id='.$row['s_id'].'" class="btn btn-success">Approve</a>
-					<a href="reject_hcs.php?p_id='.$row['id'].'&s_id='.$row['s_id'].'" class="btn btn-danger">Reject</a>
+					<a href="approve_hcs.php?app_id='.$row['application_id'].'" class="btn btn-success">Approve</a>
+					<a href="reject_hcs.php?app_id='.$row['application_id'].'" class="btn btn-danger">Reject</a>
 				</td>
 			</tr>';
 			}

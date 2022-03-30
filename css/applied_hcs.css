@@ -71,3 +71,12 @@
 	width: 35px;
 	margin-left: 2%;
 }
+#rjct_btn{
+	position: absolute;
+	right: 3%;
+	top: 15%;
+}
+#a_id{
+	font-family: 'Secular One', sans-serif;
+	margin-top: 4%;
+}
