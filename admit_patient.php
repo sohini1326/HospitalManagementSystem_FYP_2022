@@ -81,9 +81,10 @@ $name=$_SESSION['admin_name'];
             <span class="fas fa-caret-down third"></span>
           </a>
           <ul class="discharge-show">
-            <li><a onclick="showDischarged()">Unassign Bed and Discharge</a></li>
-			
+            <li><a onclick="showDischarged()">View Discharged Patients</a></li>
+			<li><a onclick="showDischarged1()">Unassign Bed and Discharge</a></li>
           </ul>
+		 
         </li>
        
       </ul>
@@ -112,7 +113,7 @@ $name=$_SESSION['admin_name'];
 		   
       ?>
 
-	  <div class="outer-container" id="content5">
+	  <div class="outer-container" id="content1">
 		  <div class="dashboard-box">
 		  <img src="IMAGES/image/dashboard-icon1.jpg" alt="">
 		  <p>DASHBOARD</p>
@@ -143,7 +144,7 @@ $name=$_SESSION['admin_name'];
 		  </div>
      </div>
 	  <!--Beds table -->
-	  <div class="content-box" id="content1">
+	  <div class="content-box" id="content2">
         
          <div class="header">
 	    <h3>List of All Beds</h3>
@@ -208,11 +209,11 @@ $name=$_SESSION['admin_name'];
 		<form action="add_bed_details.php" method="POST">
 
 		<i class="fas fa-bed icon"></i><label for="inputbedno">Bed Number</label><br>
-        <input class="form-control input-box" type="text" name="bed_number" id="inputbedno" placeholder="For eg:- <B10>"><br>
+        <input class="form-control input-box" type="text" name="bed_number" id="inputbedno" placeholder="For eg:- <B10>" required><br>
 
 		<i class="fas fa-hospital-alt icon"></i><label for="inputwardtype">Ward Type</label><br>
-		  <select id="inputwardtype"  name="ward_type" class=" form-control input-box">
-		          <option value="none" selected hidden>Select the Ward Type</option>
+		  <select id="inputwardtype"  name="ward_type" class=" form-control input-box" required>
+		          <option value=" " selected hidden>Select the Ward Type</option>
                   <?php
 
 					require "db_config.php";
@@ -227,8 +228,8 @@ $name=$_SESSION['admin_name'];
 				?>
 			</select>
 		  <i class="far fa-hospital icon"></i><label for="inputroom">Room Number</label><br>
-		  <select name="room_number" id="inputroom" class=" form-control input-box">
-		  <option value="none" hidden>Select Ward First</option>
+		  <select name="room_number" id="inputroom" class=" form-control input-box" required>
+		  <option value=" " hidden>Select Ward First</option>
 			</select>
 			<input type="submit" name="add_bed" class="btn btn-info save-btn" value="Save">
 
@@ -242,7 +243,7 @@ $name=$_SESSION['admin_name'];
   
 
 	<!--Rooms table -->
-	<div class="content-box" id="content2">
+	<div class="content-box" id="content3">
         
 		<div class="header">
 	   <h3>List of All Rooms</h3>
@@ -298,11 +299,11 @@ $name=$_SESSION['admin_name'];
 		<form action="add_room_details.php" method="POST">
 
 		<i class="fas fa-bed icon"></i><label for="inputroomno">Room Number</label><br>
-        <input class="form-control input-box" type="text" name="room_number" id="inputroomno" placeholder="For eg:- <R500>">
+        <input class="form-control input-box" type="text" name="room_number" id="inputroomno" placeholder="For eg:- <R500>" required>
 
 		<i class="fas fa-hospital-alt icon"></i><label for="inputward">Ward Type</label><br>
-		  <select id="inputward"  name="ward_type" class=" form-control input-box">
-		          <option value="none" selected hidden>Select the Ward Type</option>
+		  <select id="inputward"  name="ward_type" class=" form-control input-box" required>
+		          <option value=" " selected hidden>Select the Ward Type</option>
 				  <?php
 				     require "db_config.php";
                      $query5 = "SELECT * FROM wards";
@@ -315,7 +316,7 @@ $name=$_SESSION['admin_name'];
                   ?>
 		  </select>
 		  <i class="fas fa-file-medical icon"></i><label for="inputdesc">Description</label><br>
-		  <input class="form-control input-box" type="text" name="description" id="inputdesc" placeholder="Enter the purpose of the selected room">
+		  <input class="form-control input-box" type="text" name="description" id="inputdesc" placeholder="Enter the purpose of the selected room" required>
 			<input type="submit" name="add_room" class="btn btn-info save-btn" value="Save">
 
 		  </form>
@@ -326,7 +327,7 @@ $name=$_SESSION['admin_name'];
     </div>
   </div>
        <!--Bed Allotments table -->
-	  <div class="content-box" id="content3">
+	  <div class="content-box" id="content4">
         
 		<div class="header">
 	   <h3>List of All Admitted Patients</h3>
@@ -348,7 +349,7 @@ $name=$_SESSION['admin_name'];
 
 		   require "db_config.php";
 
-		   $query4="select p.patient_id,p.patient_name,b.bed_number,r.room_number,r.ward_type,ba.admitted_date from patient_login p inner join bed_allotments ba on p.patient_id=ba.patient_id inner join beds b on ba.bed_id=b.bed_id inner join rooms r on b.room_id=r.room_id order by p.patient_id";
+		   $query4="select p.patient_id,p.patient_name,b.bed_number,r.room_number,r.ward_type,ba.admitted_date from patient_login p inner join bed_allotments ba on p.patient_id=ba.patient_id inner join beds b on ba.bed_id=b.bed_id inner join rooms r on b.room_id=r.room_id";
 		   $result4=mysqli_query($conn,$query4);
 		   
 								   
@@ -386,10 +387,10 @@ $name=$_SESSION['admin_name'];
 		<form action="add_bed_allotment_details.php" method="POST">
 
 		<i class="fas fa-user-tie icon"></i><label for="inputpatient">Patient ID</label><br>
-        <input class="form-control input-box" type="number" name="patient_id" id="inputpatient" placeholder="<1,2,3>">
+        <input class="form-control input-box" type="number" name="patient_id" id="inputpatient" placeholder="<1,2,3>" required>
 		<i class="fas fa-hospital-alt icon"></i><label for="ward">Ward Type</label><br>
         <select id="ward"  name="ward_type" class=" form-control input-box">
-		          <option value="none" selected hidden>Select the Ward Type</option>
+		          <option value=" " selected hidden>Select the Ward Type</option>
 				  <?php
 				     require "db_config.php";
                      $query5 = "SELECT * FROM wards";
@@ -402,24 +403,24 @@ $name=$_SESSION['admin_name'];
                   ?>
 		  </select>
 		  <i class="far fa-hospital icon"></i><label for="room">Room Number</label><br>
-		  <select name="room_number" id="room" class=" form-control input-box" >
-		  <option value="none" hidden>Select Ward First</option>
+		  <select name="room_number" id="room" class=" form-control input-box" required>
+		  <option value=" " hidden>Select Ward First</option>
 		 
 		</select>
 
 			<i class="fas fa-bed icon"></i><label for="bed">Bed Number</label><br>
-			<select name="bed_number" id="bed" class=" form-control input-box">
-			<option value="none" hidden>Select Room First</option>
+			<select name="bed_number" id="bed" class=" form-control input-box" required>
+			<option value=" " hidden>Select Room First</option>
 			 </select>
 	  
 		<i class="fas fa-medkit icon"></i><label for="inputissue">Health Issue of the Patient </label><br>
-		<input class="form-control input-box" type="text" name="health_issue" id="inputissue" placeholder="Mention the Health Issue Patient is admitted for">
+		<input class="form-control input-box" type="text" name="health_issue" id="inputissue" placeholder="Mention the Health Issue Patient is admitted for" required>
 		
 		<i class="fas fa-user-md icon"></i><label for="inputdoc"> Doctor In-Charge </label><br>
-		<input class="form-control input-box" type="text" name="doctor_name" id="inputdoc" placeholder="Mention the doctor under whom patient is to be admitted">
+		<input class="form-control input-box" type="text" name="doctor_name" id="inputdoc" placeholder="Mention the doctor under whom patient is to be admitted" required>
 
 		<i class="fas fa-calendar-alt icon"></i><label for="admit_date">Admitted Date</label><br>
-		  <input class="form-control input-box" type="date" name="admitted_date" id="admit_date" placeholder="Enter date when the patient is getting admitted">
+		  <input class="form-control input-box" type="date" name="admitted_date" id="admit_date" placeholder="Enter date when the patient is getting admitted" required>
 			<input type="submit" name="add_bed_allotments" class="btn btn-info save-btn" value="Save">
 
 		  </form>
@@ -430,10 +431,57 @@ $name=$_SESSION['admin_name'];
     </div>
   </div>
 
+    <!--Discharged Patients table -->
+	<div class="content-box" id="content5">
+        
+		<div class="header">
+	   <h3>List of All Discharged Patients</h3>
+		</div>
+	   <div class="line-break"></div> 
+
+	  
+	 <table >
+	   <tr id="row-header">
+		  <th>Patient Id</th>
+		  <th>Patient Name</th>
+		  <th>Ward Type</th>
+		  <th>Room Number</th>
+		  <th>Bed Number</th>
+		  <th>Admitted Date</th>
+		  <th>Discharged Date</th>
+	   </tr>
+	   <?php
+
+		   require "db_config.php";
+
+		   $query6="select p.patient_id,p.patient_name,b.bed_number,r.room_number,r.ward_type,db.admitted_date,db.discharge_date from patient_login p inner join discharge_bed db on p.patient_id=db.patient_id inner join beds b on db.bed_id=b.bed_id inner join rooms r on b.room_id=r.room_id";
+		   $result6=mysqli_query($conn,$query6);
+		   
+								   
+		   while($row6=mysqli_fetch_assoc($result6))
+		   {
+			   
+			  
+			   echo '<tr>
+			   <td>'.$row6['patient_id'].'</td>
+			   <td>'.$row6['patient_name'].'</td>
+			   <td>'.$row6['ward_type'].'</td>
+			   <td>'.$row6['room_number'].'</td>
+			   <td>'.$row6['bed_number'].'</td>
+			   <td>'.$row6['admitted_date'].'</td>
+			   <td>'.$row6['discharge_date'].'</td>
+			  
+			   
+			   </tr>';
+		   }
+	   
+	   ?>                       
+   </table>
+   </div>
 
     <!-- Discharge Patient Form -->
 
-	<div class="content-box" id="content4">
+	<div class="content-box" id="content6">
       
 	<div class="outer-div">
         <div class="logo">
@@ -444,11 +492,11 @@ $name=$_SESSION['admin_name'];
           <form action="discharge_patient_details.php" method="POST">
             
             <i class="fas fa-user-tie icon"></i><label for="patientid">Patient ID</label><br><br>
-            <input class="form-control form-input-box" type="number" name="patient_id" id="inputpatient" placeholder="For eg:-<1,2,3>"> <br>
+            <input class="form-control form-input-box" type="number" name="patient_id" id="inputpatient" placeholder="For eg:-<1,2,3>" required> <br>
             <i class="fas fa-bed icon"></i><label for="bedno">Bed Number </label><br><br>
-            <input class="form-control form-input-box" type="text" name="bed_number" id="bedno" placeholder="For eg:- B10,B11"><br>
+            <input class="form-control form-input-box" type="text" name="bed_number" id="bedno" placeholder="For eg:- B10,B11" required><br>
             <i class="fas fa-calendar-alt icon"></i><label for="disc_date">Discharge Date</label><br><br>
-		  <input class="form-control form-input-box" type="date" name="discharge_date" id="disc_date" placeholder="Enter date when the patient is getting discharged">
+		  <input class="form-control form-input-box" type="date" name="discharge_date" id="disc_date" placeholder="Enter date when the patient is getting discharged" required>
 
           <input type="submit" name="discharge-patient" class="discharge-button" value="Discharge Patient">
             
