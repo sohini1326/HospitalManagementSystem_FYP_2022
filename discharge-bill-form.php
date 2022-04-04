@@ -4,6 +4,7 @@ session_start();
 
 $name=$_SESSION['admin_name'];
 
+$did=$_GET['did'];
 $pid=$_GET['pid'];
 $pname=$_GET['pname'];
 $ward=$_GET['ward'];
@@ -16,7 +17,8 @@ $newDate2 = date("d-m-Y", strtotime($disdate));
 $health_issue=$_GET['health'];
 
 $diff=date_diff(date_create($admitdate),date_create($disdate));
-$days = $diff->format('%d')+1;
+$days= $diff->format('%a')+1;
+
 
 ?>
 
@@ -109,35 +111,36 @@ $days = $diff->format('%d')+1;
             </div>
             <div class="form-group">
                  <label class="form-heading" for="nurse_charge">Nursing Fees(per day):</label>
-                 <input type="number" class="form-control inpt-box" id="nurse_charge" name="nurse_charge" >
+                 <input type="number" class="form-control inpt-box" id="nurse_charge" name="nurse_charge"  required>
             </div>
             <div class="form-group">
                  <label class="form-heading" for="med_cost">Medicine Cost(per day):</label>
-                 <input type="number" class="form-control inpt-box" id="med_cost" name="med_cost">
+                 <input type="number" class="form-control inpt-box" id="med_cost" name="med_cost" required>
             </div>
             <div class="form-group">
                  <label class="form-heading" for="consume">Consumables cost(per day):</label>
-                 <input type="number" class="form-control inpt-box" id="consume" name="consumables">
+                 <input type="number" class="form-control inpt-box" id="consume" name="consumables" required>
             </div>
 
             <fieldset class="form-group border p-3 field_set">
                                 <legend class="w-auto px-2 form-heading" style="width:auto">Operation Theatre:</legend>
                                 <div class="form-group">
                                     <label class="form-heading" for="surgery">Surgeon Fees:</label>
-                                    <input type="number" class="form-control inpt-box" id="surgery"  name="surgery">
+                                    <input type="number" class="form-control inpt-box" id="surgery"  name="surgery" required>
                                 </div>
                                 <div class="form-group">
                                     <label class="form-heading" for="anst">Anaesthesia Fees:</label>
-                                    <input type="number" class="form-control inpt-box" id="anst" name="anst_charge" >
+                                    <input type="number" class="form-control inpt-box" id="anst" name="anst_charge" required >
                                 </div>
                                 <div class="form-group">
                                     <label class="form-heading" for="OT_charge">OT charges:</label>
-                                    <input type="number" class="form-control inpt-box" id="OT_charge" name="OT_charge" >
+                                    <input type="number" class="form-control inpt-box" id="OT_charge" name="OT_charge" required>
                                 </div>
              </fieldset>
 
              <input type="text" name="patient_id" value="<?php echo "$pid"; ?>" hidden>
 		     <input type="text" name="patient_name" value="<?php echo "$pname"; ?>" hidden>
+             <input type="text" name="discharge_id" value="<?php echo "$did"; ?>" hidden>
 		    <input type="text" name="ward_name" value="<?php echo "$ward"; ?>" hidden>
             <input type="text" name="room_no" value="<?php echo "$room"; ?>" hidden>
             <input type="text" name="bed_no" value="<?php echo "$bed"; ?>" hidden>

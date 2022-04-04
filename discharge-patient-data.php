@@ -37,7 +37,7 @@ $name=$_SESSION['admin_name'];
 
 		   require "db_config.php";
 
-		   $query1="SELECT a.bed_id,a.health_issue,a.admitted_date,a.discharge_date,a.billing_status,a.patient_id,b.patient_name,c.bed_number,d.room_number,d.ward_type from discharge_bed a inner join patient_login b on a.patient_id=b.patient_id inner join beds c on a.bed_id=c.bed_id inner join rooms d on c.room_id=d.room_id";
+		   $query1="SELECT a.discharge_id,a.bed_id,a.health_issue,a.admitted_date,a.discharge_date,a.billing_status,a.patient_id,b.patient_name,c.bed_number,d.room_number,d.ward_type from discharge_bed a inner join patient_login b on a.patient_id=b.patient_id inner join beds c on a.bed_id=c.bed_id inner join rooms d on c.room_id=d.room_id";
            $result1=mysqli_query($conn,$query1);
            $rowcount1=mysqli_num_rows($result1);
 		   
@@ -49,6 +49,7 @@ $name=$_SESSION['admin_name'];
 	              <tr id="row-header">
 	                 <th>Patient-ID</th>
                      <th>Patient Name</th>
+					 <th>Discharge ID</th>
                      <th>Ward Type</th>
 					 <th>Room Number</th>
 					 <th>Bed Number</th>
@@ -63,14 +64,15 @@ $name=$_SESSION['admin_name'];
 			   
 			   if($row1['billing_status']=="Complete")
 			   {
-				$pid=$row1['patient_id'];
-				$bid=$row1['bed_id'];
-				$query2="SELECT patient_id,bed_id,bill_doc from discharge_bill WHERE patient_id='$pid' and bed_id='$bid'";
+				$discharge=$row1['discharge_id'];
+			    $query2= "SELECT bill_doc from discharge_bill where discharge_id='$discharge'";
                 $result2=mysqli_query($conn,$query2);
 				$row2=mysqli_fetch_assoc($result2);
+          
 			    echo '<tr>
 			   <td>'.$row1['patient_id'].'</td>
 			   <td>'.$row1['patient_name'].'</td>
+			   <td>'.$row1['discharge_id'].'</td>
 			   <td>'.$row1['ward_type'].'</td>
 			   <td>'.$row1['room_number'].'</td>
 			   <td>'.$row1['bed_number'].'</td>
@@ -84,12 +86,13 @@ $name=$_SESSION['admin_name'];
 			   echo '<tr>
 			   <td>'.$row1['patient_id'].'</td>
 			   <td>'.$row1['patient_name'].'</td>
+			   <td>'.$row1['discharge_id'].'</td>
 			   <td>'.$row1['ward_type'].'</td>
 			   <td>'.$row1['room_number'].'</td>
 			   <td>'.$row1['bed_number'].'</td>
 			   <td>'.$row1['admitted_date'].'</td>
 			   <td>'.$row1['discharge_date'].'</td>
-			   <td><a href="discharge-bill-form.php?pid='.$row1['patient_id'].'&pname='.$row1['patient_name'].'&ward='.$row1['ward_type'].'&room='.$row1['room_number'].'&bed='.$row1['bed_number'].'&admitdate='.$row1['admitted_date'].'&disdate='.$row1['discharge_date'].'&health='.$row1['health_issue'].'" target="_blank" class="btn btn-danger mybtn"><i class="fas fa-file-invoice"></i>Generate Bill</a> </td>
+			   <td><a href="discharge-bill-form.php?did='.$row1['discharge_id'].'&pid='.$row1['patient_id'].'&pname='.$row1['patient_name'].'&ward='.$row1['ward_type'].'&room='.$row1['room_number'].'&bed='.$row1['bed_number'].'&admitdate='.$row1['admitted_date'].'&disdate='.$row1['discharge_date'].'&health='.$row1['health_issue'].'" target="_blank" class="btn btn-danger mybtn"><i class="fas fa-file-invoice"></i>Generate Bill</a> </td>
 			    </tr>';
 		       }
 		  }

@@ -21,6 +21,7 @@ $ward=$_POST['ward_name'];
 $room=$_POST['room_no'];
 $bed=$_POST['bed_no'];
 $bid=$_POST['bed_id'];
+$did=$_POST['discharge_id'];
 $admitdate=$_POST['admit_date'];
 $newDate1 = date("d-m-Y", strtotime($admitdate));
 $disdate=$_POST['discharge_date'];
@@ -46,7 +47,8 @@ $diff=date_diff($date1,$date2);
 $age = $diff->format('%y yrs');
 
 $diff=date_diff(date_create($admitdate),date_create($disdate));
-$Qty= $diff->format('%d')+1;
+$Qty= $diff->format('%a')+1;
+
 $price1=$bed_charge*$Qty;
 $price2=$doc_charge*$Qty;
 $price3=$nurse_charge*$Qty;
@@ -215,7 +217,7 @@ $html='<div class="upper">
         $mpdf->output($file,'I');
         $mpdf->Output($location.$file, \Mpdf\Output\Destination::FILE);
 
-        $query3 = "INSERT INTO discharge_bill VALUES ('$pid','$bid','$total','$file')";
+        $query3 = "INSERT INTO discharge_bill VALUES ('$did','$pid','$total','$file')";
         mysqli_query($conn,$query3);
 
         if($payment_mode=='Cash'){

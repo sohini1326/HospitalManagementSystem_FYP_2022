@@ -74,7 +74,7 @@ $name=$_SESSION['admin_name'];
 			   <td>'.$row1['category'].'</td>
 			   <td>'.$row1['test_name'].'</td>
 			   <td>'.$row1['date'].'</td>
-			   <td><a href="labtest bills/'.$row2['bill_doc'].'" target="_blank" class="btn btn-warning mybtn"><i class="fas fa-eye"></i>View Bill</a> </td>
+			   <td><a href="labtest bills/'.$row2['bill_doc'].'"  target="_blank" class="btn btn-warning mybtn"><i class="fas fa-eye"></i>View Bill</a> </td>
 			    </tr>';
 		       }
 			   else if($row1['billing_status']=="Incomplete")
