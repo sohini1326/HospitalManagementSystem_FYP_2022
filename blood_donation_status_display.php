@@ -30,8 +30,8 @@ $remarks=$_GET['rem'];
 	<?php include 'includes/blood_navbar.php';?>
 
 	<div id="box">
-		<h2>Approved</h2>
-		<h4>You will be contacted in 2 days time</h4>
+		<h2><?php echo $req_status; ?></h2>
+		<h4><?php echo $remarks; ?></h4>
 		
 	</div>
 

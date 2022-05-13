@@ -16,10 +16,10 @@ if($quest === 'Y'){
 	$req_status=$fetched_result['req_status'];
 	$remarks=$fetched_result['remarks'];
 
-	header("Location:blood_donation_status_display.php?st=.'$req_status'.&rem=.'$remarks'");
+	header("Location:blood_donation_status_display.php?st=".$req_status."&rem=".$remarks);
 } 
 else if($quest === 'N'){
-	$query="SELECT * FROM blood_don_details WHERE donor_name LIKE '$name' 
+	$query="SELECT * FROM blood_donor_details WHERE donor_name LIKE '$name' 
 			AND email LIKE '$mail' AND phone_no LIKE '$number'";
 
 	$result = mysqli_query($conn,$query);
@@ -27,7 +27,7 @@ else if($quest === 'N'){
 	$req_status=$fetched_result['req_status'];
 	$remarks=$fetched_result['remarks'];
 
-	header("Location:blood_donation_status_display.php?st=.'$req_status'.&rem=.'$remarks'");
+	header("Location:blood_donation_status_display.php?st=".$req_status."&rem=".$remarks);
 }
 
 ?>
